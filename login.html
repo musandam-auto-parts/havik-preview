@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Vineet</title>
+    <meta name="description" content="Login to Vineet — premium course platform.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="login">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="side-brand">VINEET</div>
+        <a href="index.html" class="side-link" title="Home"><i class="fas fa-house"></i><span>Home</span></a>
+        <a href="dashboard.html" class="side-link" title="Dashboard"><i class="fas fa-table-columns"></i><span>Dashboard</span></a>
+        <a href="my-courses.html" class="side-link" title="My Courses"><i class="fas fa-book-bookmark"></i><span>My Courses</span></a>
+        <a href="videos.html" class="side-link" title="Videos"><i class="fas fa-play"></i><span>Videos</span></a>
+        <a href="contact.html" class="side-link" title="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        <div class="side-spacer"></div>
+        <a href="mailto:iminfinity583@gmail.com" class="side-link" title="Support"><i class="fas fa-headset"></i><span>Support</span></a>
+        <button class="side-toggle" id="sideToggle"><i class="fas fa-angles-left"></i></button>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+                <div>
+                    <h1>Welcome back</h1>
+                    <p>Login to continue</p>
+                </div>
+            </div>
+            <nav class="topnav">
+                <a href="index.html">Home</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="dashboard.html">Dashboard</a>
+            </nav>
+            <a href="signup.html" class="btn btn-outline"><i class="fas fa-user-plus"></i> Create Account</a>
+        </header>
+
+        <section class="section" style="padding-top:30px;">
+            <div class="container">
+                <div style="max-width:460px;margin:0 auto;">
+                    <div class="section-head" style="text-align:left;margin-bottom:26px;">
+                        <span class="kicker">Account</span>
+                        <h2>Login</h2>
+                    </div>
+
+                    <form id="loginForm" style="background:#fffdfa;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow);">
+                        <div id="errBox" style="display:none;background:rgba(187,51,51,.1);color:#8a2222;border:1px solid #d99;border-radius:12px;padding:12px 16px;margin-bottom:18px;font-size:.9rem;"></div>
+
+                        <div style="margin-bottom:18px;">
+                            <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:8px;">Username</label>
+                            <input name="username" id="username" placeholder="Your username" required
+                                style="width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-family:inherit;font-size:1rem;">
+                        </div>
+
+                        <div style="margin-bottom:26px;">
+                            <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:8px;">Password</label>
+                            <input name="password" id="password" type="password" placeholder="Your password" required
+                                style="width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-family:inherit;font-size:1rem;">
+                        </div>
+
+                        <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center;" id="loginBtn"><i class="fas fa-right-to-bracket"></i> Login</button>
+
+                        <p style="text-align:center;margin-top:18px;font-size:.9rem;color:var(--text-soft);">
+                            No account? <a href="signup.html" style="color:var(--brown-2);font-weight:700;">Sign up free</a>
+                        </p>
+                        <p style="text-align:center;margin-top:6px;font-size:.85rem;color:var(--text-soft);">
+                            <a href="index.html" style="color:var(--text-soft);text-decoration:underline;">Back to Home</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer" style="border-top:none;">
+            <div class="container">
+                <p>&copy; <span id="year"></span> Vineet. All rights reserved.</p>
+                <p><a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
+            </div>
+        </footer>
+    </main>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="js/config.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            var form = document.getElementById('loginForm');
+            var errBox = document.getElementById('errBox');
+            var btn = document.getElementById('loginBtn');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                errBox.style.display = 'none';
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+
+                var body = new URLSearchParams();
+                body.set('username', document.getElementById('username').value);
+                body.set('password', document.getElementById('password').value);
+
+                fetch(window.VINEET_BACKEND + '/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: body.toString(),
+                    credentials: 'include'
+                }).then(function (r) {
+                    // Follow where backend sends us — dashboard if ok, else login again.
+                    window.location.href = window.VINEET_BACKEND + '/dashboard';
+                }).catch(function () {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-right-to-bracket"></i> Login';
+                    errBox.textContent = 'Server se connect nahi ho paya. Backend URL check karo (js/config.js).';
+                    errBox.style.display = 'block';
+                });
+            });
+        })();
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
