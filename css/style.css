@@ -251,6 +251,19 @@ video { max-width: 100%; display: block; }
 .res-dl { color: var(--gold); font-size: 1.2rem; transition: transform 0.25s ease; }
 .res-card:hover .res-dl { transform: translateY(3px); }
 
+/* Empty state */
+.empty {
+    text-align: center; padding: 54px 24px;
+    background: #fffdfa; border: 1.5px dashed var(--gold); border-radius: var(--radius);
+    color: var(--text-soft);
+}
+.empty i { font-size: 3.2rem; margin-bottom: 16px; color: var(--gold); }
+.empty h3 { color: var(--text); margin-bottom: 8px; }
+
+/* Section head (dashboard style) */
+.sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.sec-head h3 { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+
 /* Toast */
 .toast {
     position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(20px);

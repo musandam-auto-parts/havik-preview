@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Vineet</title>
+    <title>My Courses | Vineet</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body data-page="contact">
+<body data-page="my-courses">
     <aside class="sidebar" id="sidebar">
         <div class="side-brand">VINEET</div>
         <a href="index.html" class="side-link" title="Home"><i class="fas fa-house"></i><span>Home</span></a>
         <a href="dashboard.html" class="side-link" title="Dashboard"><i class="fas fa-table-columns"></i><span>Dashboard</span></a>
-        <a href="my-courses.html" class="side-link" title="My Courses"><i class="fas fa-book-bookmark"></i><span>My Courses</span></a>
+        <a href="my-courses.html" class="side-link active" title="My Courses"><i class="fas fa-book-bookmark"></i><span>My Courses</span></a>
         <a href="index.html#videos" class="side-link" title="Videos"><i class="fas fa-play"></i><span>Videos</span></a>
         <a href="index.html#resources" class="side-link" title="Library"><i class="fas fa-folder-open"></i><span>Library</span></a>
-        <a href="contact.html" class="side-link active" title="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        <a href="contact.html" class="side-link" title="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
         <div class="side-spacer"></div>
         <a href="mailto:iminfinity583@gmail.com" class="side-link" title="Support"><i class="fas fa-headset"></i><span>Support</span></a>
         <button class="side-toggle" id="sideToggle"><i class="fas fa-angles-left"></i></button>
@@ -25,42 +25,54 @@
     <main class="main">
         <header class="topbar">
             <div class="topbar-left">
-                <a href="index.html" class="btn btn-solid" style="padding:10px 20px;"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="dashboard.html" class="btn btn-solid" style="padding:10px 20px;"><i class="fas fa-arrow-left"></i> Back</a>
                 <div>
-                    <h1>Contact</h1>
-                    <p>Get in touch</p>
+                    <h1>My Courses</h1>
+                    <p>Your purchased courses</p>
                 </div>
             </div>
+            <a href="index.html" class="btn btn-outline"><i class="fas fa-house"></i> Home</a>
         </header>
 
         <section class="hero" style="min-height:auto;padding:44px clamp(18px,4vw,44px);margin:0 clamp(18px,4vw,44px) 30px;border-radius:28px;background:linear-gradient(135deg,var(--brown),var(--dark));">
             <div class="hero-content" style="max-width:none;">
-                <span class="nav-pill" style="background:rgba(255,255,255,0.14);color:#efe6d6;border-color:rgba(255,255,255,0.2);"><i class="fas fa-envelope"></i> Contact</span>
-                <h1 style="color:#fff;">Get in Touch</h1>
-                <p style="color:rgba(239,230,214,0.8);">Questions or orders? We reply fast.</p>
-                <div class="hero-cta">
-                    <a href="mailto:iminfinity583@gmail.com" class="btn btn-solid" style="background:var(--gold);"><i class="fas fa-envelope"></i> Email Now</a>
-                </div>
+                <span class="nav-pill" style="background:rgba(255,255,255,0.14);color:#efe6d6;border-color:rgba(255,255,255,0.2);"><i class="fas fa-book-bookmark"></i> My Library</span>
+                <h1 style="color:#fff;">Purchased Courses</h1>
+                <p style="color:rgba(239,230,214,0.8);">All the courses you've bought, in one place — learn anytime.</p>
             </div>
         </section>
 
         <section class="section" style="padding-top:10px;">
             <div class="container">
+                <div class="sec-head" data-reveal>
+                    <h3><i class="fas fa-book-bookmark" style="color:var(--gold);"></i> My Courses</h3>
+                </div>
+
+                <div class="empty" data-reveal style="margin-bottom:40px;">
+                    <i class="fas fa-book-open"></i>
+                    <h3>No courses purchased yet</h3>
+                    <p>Browse the course library and start learning today.</p>
+                    <a href="index.html#videos" class="btn btn-solid" style="margin-top:18px;"><i class="fas fa-play"></i> Explore Courses</a>
+                </div>
+
+                <div class="sec-head" style="margin-top:60px;" data-reveal>
+                    <h3><i class="fas fa-sack-dollar" style="color:var(--gold);"></i> Order Management</h3>
+                </div>
                 <div class="grid-3">
                     <div class="card" data-reveal>
-                        <div class="card-icon ic-brown"><i class="fas fa-envelope"></i></div>
-                        <h3>Email</h3>
-                        <p>iminfinity583@gmail.com</p>
+                        <div class="card-icon ic-gold"><i class="fas fa-receipt"></i></div>
+                        <h3>0</h3>
+                        <p>Total Purchases</p>
                     </div>
                     <div class="card" data-reveal>
-                        <div class="card-icon ic-gold"><i class="fas fa-book-open"></i></div>
-                        <h3>Courses</h3>
-                        <p>Questions about a course? Just email us.</p>
+                        <div class="card-icon ic-brown"><i class="fas fa-book-open"></i></div>
+                        <h3>0</h3>
+                        <p>Active Courses</p>
                     </div>
                     <div class="card" data-reveal>
-                        <div class="card-icon ic-cream"><i class="fas fa-headset"></i></div>
-                        <h3>Support</h3>
-                        <p>Available via email, we respond quickly.</p>
+                        <div class="card-icon ic-cream"><i class="fas fa-clock"></i></div>
+                        <h3>24/7</h3>
+                        <p>Course Access</p>
                     </div>
                 </div>
             </div>
