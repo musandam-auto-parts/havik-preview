@@ -4,121 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Havik</title>
-    <meta name="description" content="Havik - Course platform dashboard.">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body data-page="home">
+<body data-page="dashboard">
 
-    <div class="app">
-        <aside class="sidebar">
-            <div class="side-logo">H.</div>
-            <a href="dashboard.html" class="side-icon active" data-page="home" title="Dashboard"><i class="fas fa-house"></i><span class="tip">Dashboard</span></a>
-            <a href="dashboard.html" class="side-icon" data-page="courses" title="Courses"><i class="fas fa-book-open"></i><span class="tip">Courses</span></a>
-            <a href="videos.html" class="side-icon" data-page="videos" title="Videos"><i class="fas fa-play"></i><span class="tip">Videos</span></a>
-            <a href="contact.html" class="side-icon" data-page="contact" title="Contact"><i class="fas fa-envelope"></i><span class="tip">Contact</span></a>
-            <div class="side-spacer"></div>
-            <a href="mailto:iminfinity583@gmail.com" class="side-icon" title="Support"><i class="fas fa-circle-question"></i><span class="tip">Support</span></a>
-        </aside>
+    <aside class="sidebar" id="sidebar">
+        <div class="side-brand">HAVIK</div>
+        <a href="index.html" class="side-link" title="Home"><i class="fas fa-house"></i><span>Home</span></a>
+        <a href="dashboard.html" class="side-link active" title="Dashboard"><i class="fas fa-table-columns"></i><span>Dashboard</span></a>
+        <a href="#videos" class="side-link" title="Videos"><i class="fas fa-play"></i><span>Videos</span></a>
+        <a href="contact.html" class="side-link" title="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        <div class="side-spacer"></div>
+        <a href="mailto:iminfinity583@gmail.com" class="side-link" title="Support"><i class="fas fa-headset"></i><span>Support</span></a>
+        <button class="side-toggle" id="sideToggle"><i class="fas fa-angles-left"></i></button>
+    </aside>
 
-        <main class="main">
-            <div class="topbar">
-                <div class="brand">
-                    <h1>Havik Dashboard</h1>
-                    <p>Learn anything. Grow daily.</p>
-                </div>
-                <div class="top-actions">
-                    <a href="javascript:history.length > 1 ? history.back() : location.href='dashboard.html'" class="back-btn" title="Go back"><i class="fas fa-arrow-left"></i></a>
-                    <input type="text" class="search" placeholder="Search courses...">
-                    <div class="avatar">H</div>
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <a href="index.html" class="btn btn-solid" style="padding:10px 20px;"><i class="fas fa-arrow-left"></i> Back</a>
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Manage and explore</p>
                 </div>
             </div>
+            <a href="index.html" class="btn btn-outline"><i class="fas fa-house"></i> Home</a>
+        </header>
 
-            <section class="hero" data-reveal>
-                <div class="hero-content">
-                    <span class="badge">Online Course Platform</span>
-                    <h2>Grow Your Skills<br>Every Single Day</h2>
-                    <p>Professional courses for every skill level. Learn at your own pace, anywhere, anytime.</p>
-                    <a href="#courses" class="btn btn-solid"><i class="fas fa-graduation-cap"></i> Browse Courses</a>
-                </div>
-            </section>
-
-            <div class="sec-head" data-reveal>
-                <h3><i class="fas fa-chart-simple" style="color:var(--primary);"></i> Overview</h3>
+        <section class="hero" style="min-height:auto;padding:44px clamp(18px,4vw,44px);margin:0 clamp(18px,4vw,44px) 30px;border-radius:28px;background:linear-gradient(135deg,var(--brown),var(--dark));">
+            <div class="hero-content" style="max-width:none;">
+                <span class="nav-pill" style="background:rgba(255,255,255,0.14);color:#efe6d6;border-color:rgba(255,255,255,0.2);"><i class="fas fa-gem"></i> Dashboard</span>
+                <h1 style="color:#fff;">Welcome back</h1>
+                <p style="color:rgba(239,230,214,0.8);">Overview of your course library.</p>
             </div>
-            <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr));">
-                <div class="stat-card" data-reveal>
-                    <div class="stat-icon i1"><i class="fas fa-book-open"></i></div>
-                    <h4>0</h4><p>Total Courses</p>
-                </div>
-                <div class="stat-card" data-reveal>
-                    <div class="stat-icon i2"><i class="fas fa-video"></i></div>
-                    <h4>3</h4><p>Videos</p>
-                </div>
-                <div class="stat-card" data-reveal>
-                    <div class="stat-icon i3"><i class="fas fa-users"></i></div>
-                    <h4>0</h4><p>Students</p>
-                </div>
-                <div class="stat-card" data-reveal>
-                    <div class="stat-icon i4"><i class="fas fa-trophy"></i></div>
-                    <h4>Coming Soon</h4><p>Certificates</p>
-                </div>
-            </div>
+        </section>
 
-            <div class="sec-head" id="courses" data-reveal>
-                <h3><i class="fas fa-book-open" style="color:var(--primary-2);"></i> Courses</h3>
-                <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                    <span class="chip active" data-filter="all">All</span>
-                    <span class="chip" data-filter="tech">Tech</span>
-                    <span class="chip" data-filter="business">Business</span>
+        <section class="section" style="padding-top:10px;">
+            <div class="container">
+                <div class="grid-3">
+                    <div class="card" data-reveal>
+                        <div class="card-icon ic-brown"><i class="fas fa-book-open"></i></div>
+                        <h3>0</h3>
+                        <p>Total Courses</p>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="card-icon ic-gold"><i class="fas fa-video"></i></div>
+                        <h3>3</h3>
+                        <p>Videos</p>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="card-icon ic-cream"><i class="fas fa-users"></i></div>
+                        <h3>0</h3>
+                        <p>Students</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="empty" data-reveal style="margin-bottom:34px;">
-                <i class="fas fa-book-open"></i>
-                <h3>No courses yet</h3>
-                <p>New courses are coming soon. Check back later!</p>
-            </div>
-
-            <div class="video-grid" style="display:none;"></div>
-
-            <div class="sec-head" id="videos" data-reveal>
-                <h3><i class="fas fa-play" style="color:var(--accent);"></i> Videos</h3>
-            </div>
-            <div class="grid">
-                <div class="video-card t3d" data-reveal>
-                    <video controls preload="metadata" src="videos/VID-20260805-WA0000.mp4"></video>
-                    <p>Video 1</p>
+                <div class="section-head" style="margin-top:70px;" data-reveal>
+                    <span class="kicker">Media Library</span>
+                    <h2>Videos</h2>
                 </div>
-                <div class="video-card t3d" data-reveal>
-                    <video controls preload="metadata" src="videos/VID-20260805-WA0002.mp4"></video>
-                    <p>Video 2</p>
-                </div>
-                <div class="video-card t3d" data-reveal>
-                    <video controls preload="metadata" src="videos/VID-20260812-WA0015.mp4"></video>
-                    <p>Video 3</p>
+                <div class="video-grid">
+                    <div class="video-card t3d" data-reveal>
+                        <video controls preload="metadata" src="videos/VID-20260805-WA0000.mp4"></video>
+                        <p><i class="fas fa-play" style="color:var(--brown);"></i> Video 1</p>
+                    </div>
+                    <div class="video-card t3d" data-reveal>
+                        <video controls preload="metadata" src="videos/VID-20260805-WA0002.mp4"></video>
+                        <p><i class="fas fa-play" style="color:var(--brown);"></i> Video 2</p>
+                    </div>
+                    <div class="video-card t3d" data-reveal>
+                        <video controls preload="metadata" src="videos/VID-20260812-WA0015.mp4"></video>
+                        <p><i class="fas fa-play" style="color:var(--brown);"></i> Video 3</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <section class="hero" style="margin-top:34px;background:linear-gradient(135deg,#171933,#1e2146);" data-reveal>
-                <div class="hero-content">
-                    <span class="badge">Get in touch</span>
-                    <h2 style="font-size:clamp(1.5rem,4vw,2.4rem);">Questions or orders?</h2>
-                    <p>Email us anytime and we'll reply fast.</p>
-                    <a href="mailto:iminfinity583@gmail.com" class="btn btn-solid"><i class="fas fa-envelope"></i> iminfinity583@gmail.com</a>
-                </div>
-            </section>
-        </main>
-    </div>
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; <span id="year"></span> Havik. All rights reserved.</p>
+                <p><a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
+            </div>
+        </footer>
+    </main>
 
-    <div class="mobile-toggle" data-sidebar-toggle><button><i class="fas fa-bars"></i></button></div>
-    <footer class="footer">
-        <p>&copy; <span id="year"></span> Havik. All rights reserved. · <a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
-    </footer>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

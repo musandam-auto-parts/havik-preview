@@ -3,83 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Havik | Course Platform</title>
-    <meta name="description" content="Havik - Professional course platform. Learn new skills, grow daily.">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <title>Havik | Premium Course Platform</title>
+    <meta name="description" content="Havik - Premium course platform. Learn new skills, grow daily.">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body data-page="landing">
+<body data-page="home">
 
-    <!-- Landing nav -->
-    <nav class="landing-nav">
-        <div class="landing-nav-inner">
-            <a href="index.html" class="landing-logo">H<span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;">.</span>avik</a>
-            <div>
-                <a href="videos.html" class="landing-link"><i class="fas fa-play"></i> Videos</a>
-                <a href="contact.html" class="landing-link"><i class="fas fa-envelope"></i> Contact</a>
-                <a href="dashboard.html" class="btn btn-solid" style="padding:11px 24px;"><i class="fas fa-right-to-bracket"></i> Dashboard</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="side-brand">HAVIK</div>
+        <a href="index.html" class="side-link active" title="Home"><i class="fas fa-house"></i><span>Home</span></a>
+        <a href="dashboard.html" class="side-link" title="Dashboard"><i class="fas fa-table-columns"></i><span>Dashboard</span></a>
+        <a href="#videos" class="side-link" title="Videos"><i class="fas fa-play"></i><span>Videos</span></a>
+        <a href="contact.html" class="side-link" title="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        <div class="side-spacer"></div>
+        <a href="mailto:iminfinity583@gmail.com" class="side-link" title="Support"><i class="fas fa-headset"></i><span>Support</span></a>
+        <button class="side-toggle" id="sideToggle"><i class="fas fa-angles-left"></i></button>
+    </aside>
 
-    <!-- Landing hero -->
-    <section class="landing-hero">
-        <div class="landing-orb orb1"></div>
-        <div class="landing-orb orb2"></div>
-        <div class="landing-orb orb3"></div>
-        <div class="landing-hero-content">
-            <span class="badge" style="background:var(--grad);color:#fff;">Premium Course Platform</span>
-            <h1>Learn Anything.<br>Grow <span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;">Every Day.</span></h1>
-            <p>Professional courses for every skill level. Learn at your own pace, anywhere, anytime.</p>
-            <div class="landing-cta">
-                <a href="dashboard.html" class="btn btn-solid" style="padding:16px 34px;"><i class="fas fa-right-to-bracket"></i> Enter Dashboard</a>
-                <a href="videos.html" class="btn btn-ghost" style="padding:16px 34px;"><i class="fas fa-play"></i> Watch Videos</a>
-            </div>
-            <div class="landing-stats">
-                <div class="landing-stat"><span class="ls-num">3</span><span>Videos</span></div>
-                <div class="landing-stat"><span class="ls-num">100%</span><span>Online</span></div>
-                <div class="landing-stat"><span class="ls-num">24/7</span><span>Access</span></div>
-            </div>
-        </div>
-    </section>
+    <!-- Main -->
+    <main class="main" id="main">
 
-    <section class="landing-section">
-        <div class="container-ld">
-            <div class="ld-grid">
-                <div class="ld-card" data-reveal>
-                    <div class="ld-icon i1"><i class="fas fa-book-open"></i></div>
-                    <h3>Premium Courses</h3>
-                    <p>High-quality, structured courses to take your skills to the next level.</p>
-                </div>
-                <div class="ld-card" data-reveal>
-                    <div class="ld-icon i2"><i class="fas fa-video"></i></div>
-                    <h3>Video Lessons</h3>
-                    <p>Learn with clear, engaging video content at your own pace.</p>
-                </div>
-                <div class="ld-card" data-reveal>
-                    <div class="ld-icon i4"><i class="fas fa-headset"></i></div>
-                    <h3>Fast Support</h3>
-                    <p>Questions? We reply fast via email any day of the week.</p>
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+                <div>
+                    <h1>HAVIK</h1>
+                    <p>Premium Course Platform</p>
                 </div>
             </div>
-        </div>
-    </section>
+            <nav class="topnav">
+                <a href="index.html" class="active">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#videos">Videos</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a href="dashboard.html" class="btn btn-solid"><i class="fas fa-right-to-bracket"></i> Enter Dashboard</a>
+        </header>
 
-    <section class="landing-cta-block" data-reveal>
-        <div class="container-ld">
-            <h2>Ready to start learning?</h2>
-            <p>Enter the dashboard and explore what Havik has to offer.</p>
-            <a href="dashboard.html" class="btn btn-solid" style="padding:16px 34px;"><i class="fas fa-right-to-bracket"></i> Enter Dashboard</a>
-        </div>
-    </section>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-3d" id="hero3d" aria-hidden="true"></div>
+            <div class="hero-glow glow1"></div>
+            <div class="hero-glow glow2"></div>
+            <div class="hero-content">
+                <span class="nav-pill"><i class="fas fa-gem"></i> Premium Course Platform</span>
+                <h1>Learn Anything.<br>Grow <em>Every Day.</em></h1>
+                <p>Professional courses for every skill level. Learn at your own pace, anywhere, anytime.</p>
+                <div class="hero-cta">
+                    <a href="dashboard.html" class="btn btn-solid"><i class="fas fa-table-columns"></i> Open Dashboard</a>
+                    <a href="#videos" class="btn btn-outline"><i class="fas fa-play"></i> Watch Videos</a>
+                </div>
+            </div>
+            <a href="#features" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
+        </section>
 
-    <footer class="footer">
-        <p>&copy; <span id="year"></span> Havik. All rights reserved. · <a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
-    </footer>
+        <!-- FEATURES -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="kicker">Why Havik</span>
+                    <h2>Premium Experience</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card t3d" data-reveal>
+                        <div class="card-icon ic-brown"><i class="fas fa-book-open"></i></div>
+                        <h3>Premium Courses</h3>
+                        <p>High-quality, carefully structured courses that take your skills to the next level.</p>
+                    </div>
+                    <div class="card t3d" data-reveal>
+                        <div class="card-icon ic-gold"><i class="fas fa-video"></i></div>
+                        <h3>Video Lessons</h3>
+                        <p>Clear, engaging video content that makes learning simple and enjoyable.</p>
+                    </div>
+                    <div class="card t3d" data-reveal>
+                        <div class="card-icon ic-cream"><i class="fas fa-headset"></i></div>
+                        <h3>Dedicated Support</h3>
+                        <p>Fast, friendly support whenever you need help, every day of the week.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEOS -->
+        <section class="section section-cream" id="videos">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="kicker">Media Library</span>
+                    <h2>Latest Videos</h2>
+                </div>
+                <div class="video-grid">
+                    <div class="video-card t3d" data-reveal>
+                        <video controls preload="metadata" src="videos/VID-20260805-WA0000.mp4"></video>
+                        <p><i class="fas fa-play" style="color:var(--brown);"></i> Video 1</p>
+                    </div>
+                    <div class="video-card t3d" data-reveal>
+                        <video controls preload="metadata" src="videos/VID-20260805-WA0002.mp4"></video>
+                        <p><i class="fas fa-play" style="color:var(--brown);"></i> Video 2</p>
+                    </div>
+                    <div class="video-card t3d" data-reveal>
+                        <video controls preload="metadata" src="videos/VID-20260812-WA0015.mp4"></video>
+                        <p><i class="fas fa-play" style="color:var(--brown);"></i> Video 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta-block" data-reveal>
+            <div class="container">
+                <h2>Ready to start learning?</h2>
+                <p>Enter the dashboard and explore everything Havik offers.</p>
+                <a href="dashboard.html" class="btn btn-solid btn-lg"><i class="fas fa-table-columns"></i> Enter Dashboard</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; <span id="year"></span> Havik. All rights reserved.</p>
+                <p><a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
+            </div>
+        </footer>
+    </main>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

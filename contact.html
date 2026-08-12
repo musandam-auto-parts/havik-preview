@@ -4,68 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Havik</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body data-page="contact">
-    <div class="app">
-        <aside class="sidebar">
-            <div class="side-logo">H.</div>
-            <a href="dashboard.html" class="side-icon" data-page="home" title="Dashboard"><i class="fas fa-house"></i><span class="tip">Dashboard</span></a>
-            <a href="dashboard.html" class="side-icon" data-page="courses" title="Courses"><i class="fas fa-book-open"></i><span class="tip">Courses</span></a>
-            <a href="videos.html" class="side-icon" data-page="videos" title="Videos"><i class="fas fa-play"></i><span class="tip">Videos</span></a>
-            <a href="contact.html" class="side-icon active" data-page="contact" title="Contact"><i class="fas fa-envelope"></i><span class="tip">Contact</span></a>
-            <div class="side-spacer"></div>
-            <a href="mailto:iminfinity583@gmail.com" class="side-icon" title="Support"><i class="fas fa-circle-question"></i><span class="tip">Support</span></a>
-        </aside>
-        <main class="main">
-            <div class="topbar">
-                <div class="brand">
-                    <h1>Havik Dashboard</h1>
-                    <p>Contact</p>
-                </div>
-                <div class="top-actions">
-                    <a href="javascript:history.length > 1 ? history.back() : location.href='dashboard.html'" class="back-btn" title="Go back"><i class="fas fa-arrow-left"></i></a>
-                    <div class="avatar">H</div>
+    <aside class="sidebar" id="sidebar">
+        <div class="side-brand">HAVIK</div>
+        <a href="index.html" class="side-link" title="Home"><i class="fas fa-house"></i><span>Home</span></a>
+        <a href="dashboard.html" class="side-link" title="Dashboard"><i class="fas fa-table-columns"></i><span>Dashboard</span></a>
+        <a href="index.html#videos" class="side-link" title="Videos"><i class="fas fa-play"></i><span>Videos</span></a>
+        <a href="contact.html" class="side-link active" title="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        <div class="side-spacer"></div>
+        <a href="mailto:iminfinity583@gmail.com" class="side-link" title="Support"><i class="fas fa-headset"></i><span>Support</span></a>
+        <button class="side-toggle" id="sideToggle"><i class="fas fa-angles-left"></i></button>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="topbar-left">
+                <a href="index.html" class="btn btn-solid" style="padding:10px 20px;"><i class="fas fa-arrow-left"></i> Back</a>
+                <div>
+                    <h1>Contact</h1>
+                    <p>Get in touch</p>
                 </div>
             </div>
+        </header>
 
-            <section class="hero" data-reveal>
-                <div class="hero-content">
-                    <span class="badge">Get in touch</span>
-                    <h2>Contact Us</h2>
-                    <p>Questions or orders? We reply fast.</p>
-                    <a href="mailto:iminfinity583@gmail.com" class="btn btn-solid"><i class="fas fa-envelope"></i> Email Now</a>
-                </div>
-            </section>
-
-            <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr));">
-                <div class="stat-card" data-reveal>
-                    <div class="stat-icon i1"><i class="fas fa-envelope"></i></div>
-                    <h4 style="font-size:1rem;">Email</h4>
-                    <p>iminfinity583@gmail.com</p>
-                </div>
-                <div class="stat-card" data-reveal>
-                    <div class="stat-icon i3"><i class="fas fa-book-open"></i></div>
-                    <h4 style="font-size:1rem;">Courses</h4>
-                    <p>Questions about a course? Just email us.</p>
-                </div>
-                <div class="stat-card" data-reveal>
-                    <div class="stat-icon i4"><i class="fas fa-headset"></i></div>
-                    <h4 style="font-size:1rem;">Support</h4>
-                    <p>Available via email, we respond quickly.</p>
+        <section class="hero" style="min-height:auto;padding:44px clamp(18px,4vw,44px);margin:0 clamp(18px,4vw,44px) 30px;border-radius:28px;background:linear-gradient(135deg,var(--brown),var(--dark));">
+            <div class="hero-content" style="max-width:none;">
+                <span class="nav-pill" style="background:rgba(255,255,255,0.14);color:#efe6d6;border-color:rgba(255,255,255,0.2);"><i class="fas fa-envelope"></i> Contact</span>
+                <h1 style="color:#fff;">Get in Touch</h1>
+                <p style="color:rgba(239,230,214,0.8);">Questions or orders? We reply fast.</p>
+                <div class="hero-cta">
+                    <a href="mailto:iminfinity583@gmail.com" class="btn btn-solid" style="background:var(--gold);"><i class="fas fa-envelope"></i> Email Now</a>
                 </div>
             </div>
-        </main>
-    </div>
-    <div class="mobile-toggle" data-sidebar-toggle><button><i class="fas fa-bars"></i></button></div>
-    <footer class="footer">
-        <p>&copy; <span id="year"></span> Havik. All rights reserved. · <a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
-    </footer>
+        </section>
+
+        <section class="section" style="padding-top:10px;">
+            <div class="container">
+                <div class="grid-3">
+                    <div class="card" data-reveal>
+                        <div class="card-icon ic-brown"><i class="fas fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <p>iminfinity583@gmail.com</p>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="card-icon ic-gold"><i class="fas fa-book-open"></i></div>
+                        <h3>Courses</h3>
+                        <p>Questions about a course? Just email us.</p>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="card-icon ic-cream"><i class="fas fa-headset"></i></div>
+                        <h3>Support</h3>
+                        <p>Available via email, we respond quickly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; <span id="year"></span> Havik. All rights reserved.</p>
+                <p><a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
+            </div>
+        </footer>
+    </main>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
