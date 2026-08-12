@@ -120,9 +120,13 @@
 
                 fetch(window.VINEET_BACKEND + '/signup', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Pinggy-No-Screen': '1'
+                    },
                     body: body.toString(),
-                    credentials: 'include'
+                    credentials: 'include',
+                    redirect: 'follow'
                 }).then(function (r) {
                     if (r.status >= 400) {
                         btn.disabled = false;
