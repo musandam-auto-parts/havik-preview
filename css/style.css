@@ -264,6 +264,49 @@ video { max-width: 100%; display: block; }
 .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
 .sec-head h3 { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
 
+/* Paywall modal */
+.pay-modal {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(36, 26, 16, 0.65);
+    backdrop-filter: blur(8px);
+    display: none; align-items: center; justify-content: center; padding: 20px;
+}
+.pay-modal.open { display: flex; animation: fadeIn 0.25s ease; }
+.pay-card {
+    background: #fffdfa; border-radius: 24px; padding: 36px;
+    max-width: 420px; width: 100%; position: relative; text-align: center;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.4);
+    animation: popIn 0.3s ease;
+}
+.pay-close {
+    position: absolute; top: 14px; right: 14px;
+    background: var(--brown-soft); border: none; color: var(--brown);
+    width: 36px; height: 36px; border-radius: 50%; font-size: 1rem;
+    transition: all 0.25s;
+}
+.pay-close:hover { background: var(--brown); color: #fff; }
+.pay-head i { font-size: 2rem; color: var(--gold); }
+.pay-head h3 { font-size: 1.3rem; font-weight: 800; margin: 10px 0 8px; }
+.pay-desc { color: var(--text-soft); font-size: 0.92rem; margin-bottom: 18px; }
+.pay-price { margin-bottom: 20px; }
+.pay-price span { font-size: 2.4rem; font-weight: 800; display: block; }
+.pay-price small { color: var(--text-soft); }
+.pay-note {
+    margin-top: 16px; font-size: 0.78rem; color: var(--text-soft);
+    background: var(--gold-soft); border-radius: 12px; padding: 10px 14px;
+}
+.pay-note i { margin-right: 4px; color: var(--gold); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+/* Locked badge on resource cards */
+.res-card { position: relative; }
+.res-card .lock-ico {
+    position: absolute; top: 14px; right: 14px; color: var(--gold);
+    font-size: 1.1rem;
+}
+.res-card.unlocked { opacity: 1; }
+.res-card.unlocked .lock-ico { color: #2e9e5b; }
+
 /* Toast */
 .toast {
     position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(20px);
