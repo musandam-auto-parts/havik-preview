@@ -231,6 +231,26 @@ video { max-width: 100%; display: block; }
 [data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
 [data-reveal].visible { opacity: 1; transform: none; }
 
+/* Resources */
+.res-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+.res-card {
+    background: #fffdfa; border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 22px; display: flex; align-items: center; gap: 16px;
+    transform: perspective(900px);
+    transition: all 0.32s ease;
+}
+.res-card:hover { transform: perspective(900px) rotateX(2deg) rotateY(-3deg) scale(1.02) translateY(-4px); box-shadow: var(--shadow); border-color: var(--gold); }
+.res-icon {
+    width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
+    background: linear-gradient(135deg, #b33, #8a2222); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+}
+.res-info { flex: 1; min-width: 0; }
+.res-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.res-info p { color: var(--text-soft); font-size: 0.84rem; }
+.res-dl { color: var(--gold); font-size: 1.2rem; transition: transform 0.25s ease; }
+.res-card:hover .res-dl { transform: translateY(3px); }
+
 /* Toast */
 .toast {
     position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(20px);
