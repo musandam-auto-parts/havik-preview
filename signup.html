@@ -100,50 +100,8 @@
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script src="js/config.js"></script>
     <script>
-        (function () {
-            'use strict';
-            var form = document.getElementById('signupForm');
-            var errBox = document.getElementById('errBox');
-            var btn = document.getElementById('signupBtn');
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                errBox.style.display = 'none';
-                btn.disabled = true;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating account...';
-
-                var body = new URLSearchParams();
-                body.set('name', document.getElementById('name').value);
-                body.set('username', document.getElementById('username').value);
-                body.set('password', document.getElementById('password').value);
-                body.set('tg', document.getElementById('tg').value);
-
-                fetch(window.VINEET_BACKEND + '/signup', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'X-Pinggy-No-Screen': '1'
-                    },
-                    body: body.toString(),
-                    credentials: 'include',
-                    redirect: 'follow'
-                }).then(function (r) {
-                    if (r.status >= 400) {
-                        btn.disabled = false;
-                        btn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
-                        errBox.textContent = 'Signup fail hua — username already exists ho sakta hai.';
-                        errBox.style.display = 'block';
-                        return;
-                    }
-                    window.location.href = window.VINEET_BACKEND + '/dashboard';
-                }).catch(function () {
-                    btn.disabled = false;
-                    btn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
-                    errBox.textContent = 'Server se connect nahi ho paya. Backend URL check karo (js/config.js).';
-                    errBox.style.display = 'block';
-                });
-            });
-        })();
+        // Signup works on the live backend — redirect there
+        window.location.replace(window.VINEET_BACKEND + '/signup');
     </script>
     <script src="js/main.js"></script>
 </body>

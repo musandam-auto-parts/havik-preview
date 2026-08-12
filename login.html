@@ -87,41 +87,8 @@
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script src="js/config.js"></script>
     <script>
-        (function () {
-            'use strict';
-            var form = document.getElementById('loginForm');
-            var errBox = document.getElementById('errBox');
-            var btn = document.getElementById('loginBtn');
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                errBox.style.display = 'none';
-                btn.disabled = true;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
-
-                var body = new URLSearchParams();
-                body.set('username', document.getElementById('username').value);
-                body.set('password', document.getElementById('password').value);
-
-                fetch(window.VINEET_BACKEND + '/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'X-Pinggy-No-Screen': '1'
-                    },
-                    body: body.toString(),
-                    credentials: 'include',
-                    redirect: 'follow'
-                }).then(function (r) {
-                    window.location.href = window.VINEET_BACKEND + '/dashboard';
-                }).catch(function () {
-                    btn.disabled = false;
-                    btn.innerHTML = '<i class="fas fa-right-to-bracket"></i> Login';
-                    errBox.textContent = 'Server se connect nahi ho paya. Backend URL check karo (js/config.js).';
-                    errBox.style.display = 'block';
-                });
-            });
-        })();
+        // Login works on the live backend — redirect there
+        window.location.replace(window.VINEET_BACKEND + '/login');
     </script>
     <script src="js/main.js"></script>
 </body>

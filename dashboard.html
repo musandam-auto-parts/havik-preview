@@ -143,5 +143,18 @@
     </script>
     <script src="js/paywall.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            // Make Login/Signup links point to the live backend auth
+            document.querySelectorAll('a[href="login.html"]').forEach(function (a) {
+                a.href = window.VINEET_BACKEND + '/login';
+            });
+            document.querySelectorAll('a[href="signup.html"]').forEach(function (a) {
+                a.href = window.VINEET_BACKEND + '/signup';
+            });
+        })();
+    </script>
 </body>
 </html>
