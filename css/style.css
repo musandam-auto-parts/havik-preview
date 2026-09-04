@@ -160,6 +160,41 @@ video { max-width: 100%; display: block; }
     height: auto;
     display: block;
 }
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.hero-image:hover .play-overlay {
+    opacity: 1;
+}
+.play-overlay.playing {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+}
+.play-overlay i {
+    font-size: 3rem;
+    color: white;
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.play-overlay i:hover {
+    transform: scale(1.1);
+}
 .scroll-hint {
     position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
     color: var(--brown-2); animation: bounce 2s infinite; z-index: 2; font-size: 1.1rem;
