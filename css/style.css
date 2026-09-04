@@ -195,6 +195,18 @@ video { max-width: 100%; display: block; }
 .play-overlay i:hover {
     transform: scale(1.1);
 }
+.gallery-image {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 .scroll-hint {
     position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
     color: var(--brown-2); animation: bounce 2s infinite; z-index: 2; font-size: 1.1rem;
