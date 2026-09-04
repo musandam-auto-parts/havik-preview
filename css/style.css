@@ -143,6 +143,23 @@ video { max-width: 100%; display: block; }
 .hero h1 em { font-style: italic; color: var(--brown-2); }
 .hero p { color: var(--text-soft); font-size: 1.1rem; max-width: 520px; margin-bottom: 34px; }
 .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-image {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    max-width: 380px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    animation: heroIn 1.2s ease both;
+}
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 .scroll-hint {
     position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
     color: var(--brown-2); animation: bounce 2s infinite; z-index: 2; font-size: 1.1rem;
