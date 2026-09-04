@@ -59,13 +59,6 @@
                     <a href="login.html" class="btn btn-outline"><i class="fas fa-right-to-bracket"></i> Login</a>
                 </div>
             </div>
-            <div class="hero-image" id="havickImage" style="cursor: pointer;" onclick="toggleHavickSong()">
-                <img src="images/havick.jpg" alt="Havick - Click to Play">
-                <div class="play-overlay" id="playOverlay">
-                    <i class="fas fa-play" id="playIcon"></i>
-                </div>
-            </div>
-            <audio id="havickAudio" src="images/havick-song.mp3"></audio>
             <a href="#features" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
         </section>
 
@@ -196,6 +189,23 @@
                 <div class="gallery-image" data-reveal>
                     <img src="images/IMG_20260828_145134.jpg" alt="Featured Image">
                 </div>
+            </div>
+        </section>
+
+        <!-- HAVICK IMAGE -->
+        <section class="section section-cream" id="havick">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="kicker">Music</span>
+                    <h2>Havick</h2>
+                </div>
+                <div class="gallery-image" data-reveal style="cursor: pointer; position: relative;" onclick="toggleHavickSong()">
+                    <img src="images/havick.jpg" alt="Havick - Click to Play">
+                    <div class="play-overlay" id="playOverlay">
+                        <i class="fas fa-play" id="playIcon"></i>
+                    </div>
+                </div>
+                <audio id="havickAudio" src="images/havick-song.mp3"></audio>
             </div>
         </section>
 
