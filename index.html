@@ -3,284 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vineet | Premium Course Platform</title>
-    <meta name="description" content="Vineet - Premium course platform. Learn new skills, grow daily.">
+    <title>Sandeep Nayak | Premium Learning Spaces</title>
+    <meta name="description" content="Sandeep Nayak — curated knowledge, resources and digital experiences.">
     <meta name="theme-color" content="#0b0907">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body data-page="home">
+<body>
 
-    <!-- Preloader -->
     <div id="preloader">
-        <div class="pre-logo">VINEET</div>
+        <div class="pre-logo">S. NAYAK</div>
         <div class="pre-bar"><i></i></div>
     </div>
 
-    <!-- Scroll progress -->
     <div class="scroll-progress"></div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <div class="side-brand">VINEET</div>
-        <a href="index.html" class="side-link active" title="Home"><i class="fas fa-house"></i><span>Home</span></a>
-        <a href="dashboard.html" class="side-link" title="Dashboard"><i class="fas fa-table-columns"></i><span>Dashboard</span></a>
-        <a href="my-courses.html" class="side-link" title="My Courses"><i class="fas fa-book-bookmark"></i><span>My Courses</span></a>
-        <a href="#videos" class="side-link" title="Videos"><i class="fas fa-play"></i><span>Videos</span></a>
-        <a href="contact.html" class="side-link" title="Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
-        <div class="side-spacer"></div>
-        <a href="mailto:iminfinity583@gmail.com" class="side-link" title="Support"><i class="fas fa-headset"></i><span>Support</span></a>
-        <button class="side-toggle" id="sideToggle"><i class="fas fa-angles-left"></i></button>
+    <!-- ===== DRAWER ===== -->
+    <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+            <div class="side-brand">Menu</div>
+            <button class="drawer-close" id="drawerClose"><i class="fas fa-xmark"></i></button>
+        </div>
+
+        <div class="drawer-owner">
+            <div class="owner-avatar">SN</div>
+            <h3>Sandeep Nayak</h3>
+            <p>Founder &amp; Curator</p>
+        </div>
+
+        <div class="drawer-links">
+            <a href="#home" class="drawer-link active" data-target="#home"><i class="fas fa-house"></i><span>Home</span></a>
+            <a href="#about" class="drawer-link" data-target="#about"><i class="fas fa-user"></i><span>About Sandeep</span></a>
+            <a href="#library" class="drawer-link" data-target="#library"><i class="fas fa-folder-open"></i><span>Library</span></a>
+            <a href="#wisdom" class="drawer-link" data-target="#wisdom"><i class="fas fa-feather"></i><span>Wisdom</span></a>
+            <a href="#music" class="drawer-link" data-target="#music"><i class="fas fa-compass"></i><span>Explore</span></a>
+            <a href="#contact" class="drawer-link" data-target="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+        </div>
+
+        <div class="drawer-foot">
+            <div class="social">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/" target="_blank" rel="noopener" title="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://t.me/" target="_blank" rel="noopener" title="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>© <span id="year"></span> Sandeep Nayak</p>
+        </div>
     </aside>
 
-    <!-- Main -->
-    <main class="main" id="main">
-
-        <header class="topbar">
-            <div class="topbar-left">
-                <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
-                <div>
-                    <h1>VINEET</h1>
-                    <p>Premium Course Platform</p>
-                </div>
+    <!-- ===== TOPBAR ===== -->
+    <header class="topbar">
+        <div class="brand">
+            <div>
+                <h1>SANDEEP NAYAK</h1>
+                <p>Curator of Knowledge</p>
             </div>
-            <nav class="topnav">
-                <a href="index.html" class="active">Home</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="#videos">Videos</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                <a href="login.html" class="btn btn-outline"><i class="fas fa-right-to-bracket"></i> Login</a>
-                <a href="signup.html" class="btn btn-solid"><i class="fas fa-user-plus"></i> Sign Up</a>
-            </div>
-        </header>
+        </div>
+        <div class="top-right">
+            <button class="menu-btn" id="menuBtn" title="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
 
-        <!-- HERO -->
-        <section class="hero">
-            <canvas id="heroCanvas"></canvas>
-            <div id="hero3d" aria-hidden="true" style="position:absolute;inset:0;z-index:0;transform-style:preserve-3d;"></div>
-            <div class="hero-glow glow1"></div>
-            <div class="hero-glow glow2"></div>
-            <div class="hero-content">
-                <span class="nav-pill"><i class="fas fa-gem"></i> Premium Course Platform</span>
-                <h1>Learn Anything.<br>Grow <em>Every Day.</em></h1>
-                <p>Professional courses for every skill level. Learn at your own pace, anywhere, anytime.</p>
-                <div class="hero-cta">
-                    <a href="signup.html" class="btn btn-solid btn-lg"><i class="fas fa-gem"></i> Get Started Free</a>
-                    <a href="login.html" class="btn btn-outline btn-lg"><i class="fas fa-right-to-bracket"></i> Login</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat"><h3 data-count="12" data-suffix="+">0</h3><p>Premium Courses</p></div>
-                    <div class="stat"><h3 data-count="5" data-suffix="+">0</h3><p>Video Lessons</p></div>
-                    <div class="stat"><h3 data-count="100" id="statSupport" data-suffix="%">0</h3><p>Learning Support</p></div>
-                </div>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-glow glow1"></div>
+        <div class="hero-glow glow2"></div>
+        <div class="hero-content">
+            <span class="nav-pill"><i class="fas fa-gem"></i> A New Standard of Knowledge</span>
+            <h1>Sandeep <em>Nayak</em></h1>
+            <p class="hero-tagline">A personal universe of books, ideas and digital experiences — built for people who refuse to think small.</p>
+            <div class="hero-cta">
+                <a href="#library" class="btn btn-solid btn-lg"><i class="fas fa-folder-open"></i> Open Library</a>
+                <a href="#about" class="btn btn-outline btn-lg"><i class="fas fa-user"></i> About Me</a>
             </div>
-            <a href="#features" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
-        </section>
-
-        <!-- FEATURES -->
-        <section class="section" id="features">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="kicker">Why Vineet</span>
-                    <h2>Premium Experience</h2>
-                    <p>Everything built with one obsession — making your learning feel first-class.</p>
-                </div>
-                <div class="grid-3">
-                    <div class="card t3d" data-reveal>
-                        <div class="card-icon ic-gold"><i class="fas fa-book-open"></i></div>
-                        <h3>Premium Courses</h3>
-                        <p>High-quality, carefully structured courses that take your skills to the next level.</p>
-                    </div>
-                    <div class="card t3d" data-reveal>
-                        <div class="card-icon ic-brown"><i class="fas fa-video"></i></div>
-                        <h3>Video Lessons</h3>
-                        <p>Clear, engaging video content that makes learning simple and enjoyable.</p>
-                    </div>
-                    <div class="card t3d" data-reveal>
-                        <div class="card-icon ic-cream"><i class="fas fa-headset"></i></div>
-                        <h3>Dedicated Support</h3>
-                        <p>Fast, friendly support whenever you need help, every day of the week.</p>
-                    </div>
-                </div>
+            <div class="hero-stats">
+                <div class="stat"><h3 data-count="6" data-suffix="+">0</h3><p>Curated Books</p></div>
+                <div class="stat"><h3 data-count="100" data-suffix="%">0</h3><p>Free Access</p></div>
+                <div class="stat"><h3 data-count="24" data-suffix="/7">0</h3><p>Open World</p></div>
             </div>
-        </section>
+        </div>
+        <a href="#about" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
+    </section>
 
-        <!-- VIDEOS -->
-        <section class="section section-cream" id="videos">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="kicker">Media Library</span>
-                    <h2>Latest Videos</h2>
-                    <p>Stream instantly — every lesson in stunning clarity.</p>
-                </div>
-                <div class="video-grid">
-                    <div class="video-card t3d" data-reveal>
-                        <video controls preload="metadata" src="videos/osho.mp4"></video>
-                        <p><i class="fas fa-play"></i> Osho</p>
-                    </div>
-                    <div class="video-card t3d" data-reveal>
-                        <video controls preload="metadata" src="videos/concert.mp4"></video>
-                        <p><i class="fas fa-play"></i> Performance</p>
-                    </div>
-                    <div class="video-card t3d" data-reveal>
-                        <video controls preload="metadata" src="videos/VID-20260805-WA0000.mp4"></video>
-                        <p><i class="fas fa-play"></i> Video</p>
-                    </div>
-                    <div class="video-card t3d" data-reveal>
-                        <video controls preload="metadata" src="videos/VID-20260805-WA0002.mp4"></video>
-                        <p><i class="fas fa-play"></i> Video</p>
-                    </div>
-                    <div class="video-card t3d" data-reveal>
-                        <video controls preload="metadata" src="videos/VID-20260812-WA0015.mp4"></video>
-                        <p><i class="fas fa-play"></i> Video</p>
-                    </div>
-                </div>
+    <!-- ===== ABOUT ===== -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <span class="kicker">About</span>
+                <h2>Who is Sandeep Nayak?</h2>
             </div>
-        </section>
-
-        <!-- RESOURCES -->
-        <section class="section" id="resources">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="kicker">Library</span>
-                    <h2>Resources &amp; Books</h2>
-                    <p>Hand-picked reads that change how you think, earn and live.</p>
-                </div>
-                <div class="res-grid">
-                    <a href="resources/money-master-the-game.pdf" target="_blank" class="res-card t3d" data-reveal data-locked="resources/money-master-the-game.pdf" data-title="Money — Master The Game">
-                        <div class="res-icon"><i class="fas fa-file-pdf"></i></div>
-                        <div class="res-info">
-                            <h3>Money — Master The Game</h3>
-                            <p>Tony Robbins · Must-read</p>
+            <div class="about-wrap">
+                <div class="about-photo" data-reveal>
+                    <span class="initials">SN</span>
+                    <div class="about-badge">
+                        <i class="fas fa-circle-check"></i>
+                        <div>
+                            <span>Sandeep Nayak</span>
+                            <small>Founder &amp; Curator</small>
                         </div>
-                        <i class="fas fa-lock lock-ico"></i><i class="fas fa-download res-dl"></i>
-                    </a>
-                    <a href="resources/influence-psychology.pdf" target="_blank" class="res-card t3d" data-reveal data-locked="resources/influence-psychology.pdf" data-title="Influence — Psychology">
-                        <div class="res-icon"><i class="fas fa-file-pdf"></i></div>
-                        <div class="res-info">
-                            <h3>Influence — Psychology</h3>
-                            <p>Persuasion &amp; mindset</p>
-                        </div>
-                        <i class="fas fa-lock lock-ico"></i><i class="fas fa-download res-dl"></i>
-                    </a>
-                    <a href="resources/art-of-seduction.pdf" target="_blank" class="res-card t3d" data-reveal data-locked="resources/art-of-seduction.pdf" data-title="The Art of Seduction">
-                        <div class="res-icon"><i class="fas fa-file-pdf"></i></div>
-                        <div class="res-info">
-                            <h3>The Art of Seduction</h3>
-                            <p>Robert Greene</p>
-                        </div>
-                        <i class="fas fa-lock lock-ico"></i><i class="fas fa-download res-dl"></i>
-                    </a>
-                    <a href="resources/build-dont-talk.pdf" target="_blank" class="res-card t3d" data-reveal data-locked="resources/build-dont-talk.pdf" data-title="Build, Don't Talk">
-                        <div class="res-icon"><i class="fas fa-file-pdf"></i></div>
-                        <div class="res-info">
-                            <h3>Build, Don't Talk</h3>
-                            <p>Startup playbook</p>
-                        </div>
-                        <i class="fas fa-lock lock-ico"></i><i class="fas fa-download res-dl"></i>
-                    </a>
-                    <a href="resources/shatter-me.pdf" target="_blank" class="res-card t3d" data-reveal data-locked="resources/shatter-me.pdf" data-title="Shatter Me">
-                        <div class="res-icon"><i class="fas fa-file-pdf"></i></div>
-                        <div class="res-info">
-                            <h3>Shatter Me</h3>
-                            <p>Tahereh Mafi · Novel</p>
-                        </div>
-                        <i class="fas fa-lock lock-ico"></i><i class="fas fa-download res-dl"></i>
-                    </a>
-                    <a href="resources/bonus-resources.pdf" target="_blank" class="res-card t3d" data-reveal data-locked="resources/bonus-resources.pdf" data-title="Bonus Resources">
-                        <div class="res-icon"><i class="fas fa-file-pdf"></i></div>
-                        <div class="res-info">
-                            <h3>Bonus Resources</h3>
-                            <p>Extras &amp; guides</p>
-                        </div>
-                        <i class="fas fa-lock lock-ico"></i><i class="fas fa-download res-dl"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section cta-block" data-reveal>
-            <div class="container">
-                <h2>Ready to start learning?</h2>
-                <p>Create your free account and enter the dashboard — everything Vineet offers.</p>
-                <a href="signup.html" class="btn btn-solid btn-lg"><i class="fas fa-user-plus"></i> Sign Up Free</a>
-                <a href="login.html" class="btn btn-outline btn-lg" style="margin-left:12px;"><i class="fas fa-right-to-bracket"></i> Login</a>
-            </div>
-        </section>
-
-        <!-- GALLERY IMAGE -->
-        <section class="section" id="gallery">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="kicker">Gallery</span>
-                    <h2>Featured Image</h2>
-                </div>
-                <div class="gallery-image" data-reveal>
-                    <img src="images/IMG_20260828_145134.jpg" alt="Featured Image">
-                </div>
-            </div>
-        </section>
-
-        <!-- HAVICK IMAGE -->
-        <section class="section section-cream" id="havick">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="kicker">Music</span>
-                    <h2>Havick</h2>
-                </div>
-                <div class="gallery-image" data-reveal style="cursor:pointer;" onclick="toggleHavickSong()">
-                    <img src="images/havick.jpg" alt="Havick - Click to Play">
-                    <div class="play-overlay" id="playOverlay">
-                        <i class="fas fa-play" id="playIcon"></i>
                     </div>
                 </div>
-                <audio id="havickAudio" src="images/havick-song.mp3"></audio>
+                <div class="about-body" data-reveal>
+                    <h3>Mind over everything.</h3>
+                    <p>Welcome to my space. I collect what actually matters — timeless books, sharp ideas and honest wisdom — and present it in one place, beautifully.</p>
+                    <p>This site is a living project: the Library grows, the experience evolves. Everything here is built from scratch with one obsession: excellence.</p>
+                    <div class="about-pillars">
+                        <div class="pillar"><div><i class="fas fa-book-open"></i></div><h4>Knowledge</h4><p>Timeless reads</p></div>
+                        <div class="pillar"><div><i class="fas fa-bolt"></i></div><h4>Discipline</h4><p>Grow daily</p></div>
+                        <div class="pillar"><div><i class="fas fa-gem"></i></div><h4>Excellence</h4><p>No shortcuts</p></div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; <span id="year"></span> Vineet. All rights reserved.</p>
-                <p><a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a></p>
+    <!-- ===== LIBRARY ===== -->
+    <section class="section" id="library">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <span class="kicker">Library</span>
+                <h2>The Reading Room</h2>
+                <p>Six books that built kings, generals and self-made fortunes — every one of them classic and freely readable.</p>
             </div>
-        </footer>
-    </main>
+            <div class="res-grid">
+                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/25434" target="_blank" rel="noopener">
+                    <div class="res-icon"><i class="fas fa-book"></i></div>
+                    <div class="res-info">
+                        <h3>The Science of Getting Rich</h3>
+                        <p>Wallace Wattles · Wealth mindset</p>
+                    </div>
+                    <i class="fas fa-arrow-right res-go"></i>
+                </a>
+                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/4507" target="_blank" rel="noopener">
+                    <div class="res-icon"><i class="fas fa-brain"></i></div>
+                    <div class="res-info">
+                        <h3>As a Man Thinketh</h3>
+                        <p>James Allen · Thought is destiny</p>
+                    </div>
+                    <i class="fas fa-arrow-right res-go"></i>
+                </a>
+                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/132" target="_blank" rel="noopener">
+                    <div class="res-icon"><i class="fas fa-chess-knight"></i></div>
+                    <div class="res-info">
+                        <h3>The Art of War</h3>
+                        <p>Sun Tzu · Strategy classic</p>
+                    </div>
+                    <i class="fas fa-arrow-right res-go"></i>
+                </a>
+                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/2680" target="_blank" rel="noopener">
+                    <div class="res-icon"><i class="fas fa-columns"></i></div>
+                    <div class="res-info">
+                        <h3>Meditations</h3>
+                        <p>Marcus Aurelius · Stoic royalty</p>
+                    </div>
+                    <i class="fas fa-arrow-right res-go"></i>
+                </a>
+                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/148" target="_blank" rel="noopener">
+                    <div class="res-icon"><i class="fas fa-flag-usa"></i></div>
+                    <div class="res-info">
+                        <h3>The Autobiography of Benjamin Franklin</h3>
+                        <p>Self-made legacy</p>
+                    </div>
+                    <i class="fas fa-arrow-right res-go"></i>
+                </a>
+                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/9351" target="_blank" rel="noopener">
+                    <div class="res-icon"><i class="fas fa-mountain-sun"></i></div>
+                    <div class="res-info">
+                        <h3>Self-Help</h3>
+                        <p>Samuel Smiles · The original grinder's manual</p>
+                    </div>
+                    <i class="fas fa-arrow-right res-go"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WISDOM / QUOTE ===== -->
+    <section class="section section-alt" id="wisdom">
+        <div class="container quote-block" data-reveal>
+            <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+            <blockquote>A reader lives a thousand lives before he dies.<br><em>The man who never reads lives only one.</em></blockquote>
+            <cite>- George R. R. Martin</cite>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="cta-block" data-reveal>
+                <h2>Let's build something great.</h2>
+                <p>Collaborations, ideas or just an honest conversation — the inbox is open.</p>
+                <a href="mailto:hello@sandeepnayak.com" class="btn btn-solid btn-lg"><i class="fas fa-envelope"></i> Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="f-brand">SANDEEP NAYAK</span>
+            <p>© <span id="year"></span> Sandeep Nayak · Crafted with obsession</p>
+        </div>
+    </footer>
 
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    <script src="js/paywall.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/config.js"></script>
-    <script>
-        (function () {
-            'use strict';
-            document.querySelectorAll('a[href="login.html"]').forEach(function (a) {
-                a.href = window.VINEET_BACKEND + '/login';
-            });
-            document.querySelectorAll('a[href="signup.html"]').forEach(function (a) {
-                a.href = window.VINEET_BACKEND + '/signup';
-            });
-        })();
-        function toggleHavickSong() {
-            var audio = document.getElementById('havickAudio');
-            var icon = document.getElementById('playIcon');
-            var overlay = document.getElementById('playOverlay');
-            if (audio.paused) {
-                audio.play();
-                icon.classList.remove('fa-play');
-                icon.classList.add('fa-pause');
-                overlay.classList.add('playing');
-            } else {
-                audio.pause();
-                icon.classList.remove('fa-pause');
-                icon.classList.add('fa-play');
-                overlay.classList.remove('playing');
-            }
-        }
-        document.getElementById('playIcon').addEventListener('click', toggleHavickSong);
-    </script>
 </body>
 </html>
