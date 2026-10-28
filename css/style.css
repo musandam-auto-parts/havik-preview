@@ -472,3 +472,16 @@ button { font-family: inherit; cursor: pointer; }
 .svc-info p { color: var(--text-soft); font-size: 0.84rem; }
 .svc-go { color: var(--gold); font-size: 1.1rem; transition: transform 0.25s; }
 .svc-card:hover .svc-go { transform: translate(3px,-3px); }
+
+/* ===== Book request strip (footer) ===== */
+.request-strip {
+    margin-top: 26px; padding: 22px 26px;
+    background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line-soft); border-radius: 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+}
+.request-strip .req-text h4 { font-size: 0.95rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+.request-strip .req-text h4 i { color: var(--gold); }
+.request-strip .req-text p { color: var(--text-soft); font-size: 0.84rem; max-width: 560px; }
+.request-strip .btn { flex-shrink: 0; }
