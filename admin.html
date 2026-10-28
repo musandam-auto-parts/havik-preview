@@ -105,6 +105,16 @@
                         <p>Ultimate Video Downloader service.</p>
                     </div>
                     <div class="ad-card" data-reveal>
+                        <div class="ad-icon"><i class="fas fa-inbox"></i></div>
+                        <div class="big" id="reqCount">0</div>
+                        <h3>Requests (this device)</h3>
+                        <p>Book requests submitted from this browser — full details with IP, name, phone.</p>
+                        <div class="ad-tools">
+                            <a class="btn btn-outline" style="padding:9px 16px;font-size:.8rem;" href="#" id="viewReqs">View Log</a>
+                            <a class="btn btn-outline" style="padding:9px 16px;font-size:.8rem;" href="https://mail.google.com/" target="_blank">📨 Email Inbox</a>
+                        </div>
+                    </div>
+                    <div class="ad-card" data-reveal>
                         <div class="ad-icon"><i class="fas fa-link"></i></div>
                         <h3>Quick Links</h3>
                         <p>Direct access to everything.</p>
@@ -174,6 +184,15 @@
             document.getElementById('eyeBtn').addEventListener('click', function () {
                 var p = document.getElementById('pwd');
                 p.type = p.type === 'password' ? 'text' : 'password';
+            });
+            var reqs = JSON.parse(localStorage.getItem('sn_request_log') || '[]');
+            document.getElementById('reqCount').textContent = reqs.length;
+            document.getElementById('viewReqs').addEventListener('click', function (e) {
+                e.preventDefault();
+                if (!reqs.length) { alert('No requests logged on this device yet.'); return; }
+                var w = window.open('', '_blank');
+                w.document.write('<html><head><title>Request Log</title><style>body{background:#0b0907;color:#f2ead9;font-family:monospace;padding:30px}h1{color:#e8b84b}tr{border-bottom:1px solid #333}td{padding:8px}table{border-collapse:collapse;margin-top:14px}</style></head><body><h1>📖 Book Requests</h1><table>' + reqs.map(function(r){return '<tr><td>'+r.time+'</td><td><b>'+r.name+'</b></td><td>'+r.phone+'</td><td>'+r.ip+'</td></tr><tr><td colspan="4">'+r.book+' — '+r.message+'</td></tr>';}).join('') + '</table></body></html>');
+                w.document.close();
             });
             document.getElementById('logoutBtn').addEventListener('click', function () {
                 sessionStorage.removeItem(KEY);

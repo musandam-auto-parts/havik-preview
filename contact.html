@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Book | Sandeep Nayak</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0b0907">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { display: block; }
+        .contact-hero { padding: 130px 20px 40px; text-align: center; }
+        .admin-panel-card {
+            max-width: 520px; margin: 0 auto 34px;
+            background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--line-soft); border-radius: 20px;
+            padding: 34px 30px; text-align: center; box-shadow: var(--shadow-sm);
+            position: relative; overflow: hidden;
+        }
+        .admin-panel-card::before {
+            content: ''; position: absolute; width: 260px; height: 260px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(232,184,75,0.14), transparent 70%);
+            top: -90px; right: -70px; pointer-events: none;
+        }
+        .admin-photo {
+            width: 108px; height: 108px; border-radius: 50%; object-fit: cover;
+            padding: 3px; background: var(--grad-gold);
+            box-shadow: 0 16px 44px rgba(232,184,75,0.4); margin-bottom: 16px;
+        }
+        .admin-panel-card h2 { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 1.8rem; }
+        .admin-panel-card .role {
+            font-size: 0.7rem; letter-spacing: 2.5px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 14px;
+        }
+        .admin-mail {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0,0,0,0.3); border: 1px solid var(--line-soft);
+            padding: 10px 18px; border-radius: 999px; color: var(--text-soft); font-size: 0.86rem;
+        }
+        .admin-mail i { color: var(--gold); }
+        .admin-mail a { color: var(--text); font-weight: 600; }
+        .admin-mail a:hover { color: var(--gold); }
+        .req-form { max-width: 520px; margin: 0 auto; text-align: left; }
+        .req-form .form-card { padding: 34px 30px; }
+        .req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        @media (max-width: 560px) { .req-grid { grid-template-columns: 1fr; } }
+        textarea.req {
+            width: 100%; padding: 14px 16px; border-radius: 14px;
+            border: 1.5px solid var(--line-soft); background: rgba(0,0,0,0.3);
+            color: var(--text); font-family: inherit; font-size: 1rem; resize: vertical; min-height: 96px;
+            transition: border-color .25s, box-shadow .25s;
+        }
+        textarea.req:focus { outline: none; border-color: var(--gold) !important; box-shadow: 0 0 0 4px var(--gold-soft); }
+        .ip-note {
+            display: flex; align-items: flex-start; gap: 8px;
+            margin-top: 14px; font-size: 0.72rem; color: #7a6a54;
+            background: rgba(232,184,75,0.07); border: 1px solid rgba(232,184,75,0.15);
+            border-radius: 12px; padding: 10px 14px;
+        }
+        .ip-note i { color: var(--gold); margin-top: 2px; }
+        .sent-ok {
+            display: none; text-align: center;
+            background: rgba(87,224,165,0.1); border: 1px solid rgba(87,224,165,0.35);
+            color: #7ff0bd; border-radius: 14px; padding: 18px; margin-bottom: 18px; font-size: 0.9rem;
+        }
+        .sent-fallback { text-align: center; margin-top: 14px; font-size: 0.82rem; color: var(--text-soft); display: none; }
+        .sent-fallback a { color: var(--gold); font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress"></div>
+
+    <header class="topbar">
+        <div class="brand">
+            <div>
+                <h1 style="font-size:1.3rem;">SANDEEP NAYAK</h1>
+                <p>Curator of Knowledge</p>
+            </div>
+        </div>
+        <div class="top-right">
+            <a href="index.html" class="btn btn-outline" style="padding:11px 22px;"><i class="fas fa-arrow-left"></i> Back</a>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="section-head" data-reveal style="margin-bottom:40px;">
+            <span class="kicker">Contact</span>
+            <h2>Talk to the Admin</h2>
+        </div>
+
+        <!-- ADMIN CARD -->
+        <div class="admin-panel-card" data-reveal>
+            <img class="admin-photo" src="images/sandeep.jpg" alt="Sandeep Nayak — Admin">
+            <h2>Sandeep Nayak</h2>
+            <p class="role">Library Admin &amp; Founder</p>
+            <div class="admin-mail">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a>
+            </div>
+        </div>
+
+        <!-- REQUEST FORM -->
+        <div class="req-form" data-reveal>
+            <form class="form-card" id="reqForm">
+                <div class="sent-ok" id="sentOk">
+                    <i class="fas fa-circle-check"></i> Request sent! Admin will reply shortly.
+                </div>
+                <div id="reqErr" class="err"></div>
+
+                <div class="req-grid">
+                    <div class="field">
+                        <label>Full Name *</label>
+                        <input name="name" id="rName" placeholder="Your name" required>
+                    </div>
+                    <div class="field">
+                        <label>Phone *</label>
+                        <input name="phone" id="rPhone" placeholder="+91 00000 00000" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Email (optional)</label>
+                    <input name="email" id="rEmail" type="email" placeholder="you@example.com">
+                </div>
+                <div class="field">
+                    <label>Book / Anything You Need *</label>
+                    <input name="book" id="rBook" placeholder="e.g. Atomic Habits, course notes, any topic..." required>
+                </div>
+                <div class="field">
+                    <label>Extra Details (optional)</label>
+                    <textarea class="req" name="message" id="rMsg" placeholder="Author, language, format..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center;" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i> Send Request
+                </button>
+
+                <p class="sent-fallback" id="fallback">
+                    Network blocked? <a id="mailFallback" href="#">Send the same request via email app</a>
+                </p>
+
+                <div class="ip-note">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>For safety, your request is logged with network &amp; device details. Misuse is preventable and traceable.</span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer" style="margin-top:70px;">
+        <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+            <span class="f-brand" style="font-size:1.1rem;">SANDEEP NAYAK</span>
+            <p>© <span id="year"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        (function () {
+            'use strict';
+            var payload = { name: '', phone: '', email: '', book: '', message: '', ip: '…', device: '', time: '' };
+
+            fetch('https://api.ipify.org?format=json')
+                .then(function (r) { return r.json(); })
+                .then(function (d) { payload.ip = d.ip; })
+                .catch(function () { payload.ip = 'unknown'; });
+
+            payload.device = navigator.userAgent;
+
+            function stamp() {
+                var d = new Date();
+                return d.toLocaleString('en-IN') + ' · ' + Intl.DateTimeFormat().resolvedOptions().timeZone;
+            }
+
+            function toMailtoBody(d) {
+                return encodeURIComponent(
+                    'Book Request\n' + Array(40).join('-') +
+                    '\nName    : ' + d.name +
+                    '\nPhone   : ' + d.phone +
+                    '\nEmail   : ' + (d.email || '-') +
+                    '\nBook    : ' + d.book +
+                    '\nDetails : ' + (d.message || '-') +
+                    '\nIPv4    : ' + d.ip +
+                    '\nDevice  : ' + d.device +
+                    '\nTime    : ' + stamp()
+                );
+            }
+
+            var form = document.getElementById('reqForm');
+            var btn = document.getElementById('sendBtn');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var errBox = document.getElementById('reqErr');
+                document.getElementById('sentOk').style.display = 'none';
+                errBox.style.display = 'none';
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+                payload.time = stamp();
+                var f = new FormData(form);
+                payload.name = f.get('name'); payload.phone = f.get('phone');
+                payload.email = f.get('email'); payload.book = f.get('book'); payload.message = f.get('message');
+
+                var mailtoFallback = 'mailto:iminfinity583@gmail.com?subject=' +
+                    encodeURIComponent('Book Request — ' + payload.name) + '&body=' + toMailtoBody(payload);
+                document.getElementById('mailFallback').href = mailtoFallback;
+
+                // save local archive (also visible in admin panel on same device)
+                try {
+                    var log = JSON.parse(localStorage.getItem('sn_request_log') || '[]');
+                    log.push(payload);
+                    localStorage.setItem('sn_request_log', JSON.stringify(log));
+                } catch (err) {}
+
+                fetch('https://formsubmit.co/ajax/iminfinity583@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        _subject: '📖 New Book Request — ' + payload.name,
+                        _template: 'table',
+                        _captcha: 'false',
+                        Name: payload.name,
+                        Phone: payload.phone,
+                        Email: payload.email || '-',
+                        Book: payload.book,
+                        Details: payload.message || '-',
+                        'IP Address': payload.ip,
+                        Device: payload.device,
+                        Time: payload.time
+                    })
+                })
+                .then(function (r) {
+                    document.getElementById('sentOk').style.display = 'block';
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
+                    btn.disabled = false;
+                    document.getElementById('fallback').style.display = 'none';
+                    form.querySelectorAll('input, textarea').forEach(function (x) { x.value = ''; });
+                })
+                .catch(function () {
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
+                    btn.disabled = false;
+                    document.getElementById('fallback').style.display = 'block';
+                    window.location.href = mailtoFallback;
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
