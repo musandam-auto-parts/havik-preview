@@ -159,8 +159,7 @@
                     var arr = Array.from(new Uint8Array(buf));
                     var h = arr.map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
                     if (h === PASSCODE_HASH) {
-                        sessionStorage.setItem(KEY, '1');
-                        unlock();
+                                                unlock();
                     } else {
                         var err = document.getElementById('lockErr');
                         err.style.display = 'block';
@@ -173,7 +172,7 @@
                 });
             }
 
-            if (sessionStorage.getItem(KEY) === '1') unlock();
+
 
             document.getElementById('loginNow').addEventListener('click', function () {
                 verify(document.getElementById('pwd').value);
@@ -195,8 +194,7 @@
                 w.document.close();
             });
             document.getElementById('logoutBtn').addEventListener('click', function () {
-                sessionStorage.removeItem(KEY);
-                location.reload();
+                                location.reload();
             });
         })();
     </script>
