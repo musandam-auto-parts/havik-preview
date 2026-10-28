@@ -543,3 +543,54 @@ button, a, input, textarea, select { touch-action: manipulation; }
 
 /* books bas section pe aane par hi animate karein */
 [data-reveal] .svc-card, [data-reveal] .book { transition: none; }
+
+/* ===== LIBRARY — PROFESSIONAL NUMBERED SYSTEM ===== */
+.res-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); align-content: start; }
+.book {
+    display: flex; gap: 16px; align-items: stretch;
+    padding: 20px; border-radius: 16px;
+    background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line-soft); box-shadow: var(--shadow-sm);
+    transition: transform .32s var(--ease), border-color .32s, box-shadow .32s;
+    position: relative;
+}
+.book:hover { transform: translateY(-6px); border-color: var(--line); box-shadow: var(--shadow); }
+
+/* index number */
+.book-num {
+    position: absolute; top: 12px; right: 14px;
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 1.5px;
+    color: var(--gold); opacity: 0.9;
+    background: rgba(232,184,75,0.10); border: 1px solid rgba(232,184,75,0.25);
+    padding: 2px 9px; border-radius: 999px;
+    font-feature-settings: 'tnum';
+}
+/* uniform cover */
+.book-cover {
+    width: 84px; flex-shrink: 0; border-radius: 10px;
+    background: linear-gradient(160deg, #261b10, #1a120a 70%);
+    border: 1px solid var(--line-soft); border-left: 3px solid var(--gold-2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1.55rem;
+    box-shadow: inset 8px 0 12px -8px rgba(232,184,75,0.28);
+}
+.book:hover .book-cover { border-left-color: var(--gold); }
+/* meta */
+.book-meta { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.book-tag {
+    width: fit-content; font-size: 0.62rem; font-weight: 800; letter-spacing: 1.8px;
+    text-transform: uppercase; color: var(--gold);
+    border: none; background: none; padding: 0; margin-bottom: 6px;
+}
+.book-meta h3 { font-size: 1rem; font-weight: 700; color: #fff; line-height: 1.35; margin-bottom: 2px; }
+.book-author { font-size: 0.76rem; color: var(--gold); opacity: 0.9; margin-bottom: 4px; }
+.book-note { font-size: 0.8rem; color: var(--text-soft); flex: 1; line-height: 1.55; }
+.book-meta-row {
+    display: flex; justify-content: space-between; gap: 10px; margin-top: 12px;
+    padding-top: 10px; border-top: 1px solid var(--line-soft);
+    font-size: 0.66rem; letter-spacing: 1px; color: #8a7d66; text-transform: uppercase;
+    font-feature-settings: 'tnum';
+}
+/* remove older ribbon/featured noise */
+.ribbon { display: none; }
+.read-link, .res-card { background: transparent; }
