@@ -78,7 +78,10 @@
   // ===== Reveal on scroll =====
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
-      if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+      if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target);
+        var grid = en.target.closest('.svc-grid, .res-grid, .video-grid, .grid-3');
+        if (grid) grid.classList.add('visible');
+      }
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
