@@ -500,3 +500,12 @@ button { font-family: inherit; cursor: pointer; }
 /* prevent double-tap zoom jitter */
 html { touch-action: manipulation; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 button, a, input, textarea, select { touch-action: manipulation; }
+
+/* owner avatar in topbar */
+.top-avatar {
+    width: 46px; height: 46px; border-radius: 50%; object-fit: cover;
+    padding: 2px; background: var(--grad-gold);
+    box-shadow: 0 6px 20px rgba(232,184,75,0.35);
+    animation: glowPulse 4s ease-in-out infinite;
+    flex-shrink: 0;
+}
