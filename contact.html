@@ -62,8 +62,25 @@
         .ip-note i { color: var(--gold); margin-top: 2px; }
         .sent-ok {
             display: none; text-align: center;
-            background: rgba(87,224,165,0.1); border: 1px solid rgba(87,224,165,0.35);
-            color: #7ff0bd; border-radius: 14px; padding: 18px; margin-bottom: 18px; font-size: 0.9rem;
+            background: rgba(87,224,165,0.12); border: 1px solid rgba(87,224,165,0.4);
+            color: #7ff0bd; border-radius: 16px; padding: 30px 20px; margin-bottom: 26px;
+            animation: popIn 0.35s var(--ease);
+        }
+        .sent-ok .ok-ic {
+            width: 74px; height: 74px; margin: 0 auto 14px; border-radius: 50%;
+            background: linear-gradient(135deg, #57e0a5, #1d7f52);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: #062a19;
+            box-shadow: 0 16px 44px rgba(87,224,165,0.4);
+        }
+        .sent-ok h3 { font-size: 1.3rem; color: #fff; margin-bottom: 8px; font-weight: 800; }
+        .sent-ok p { font-size: 0.95rem; color: #a8f5cf; line-height: 1.7; }
+        .sent-ok small { opacity: 0.75; font-size: 0.78rem; }
+        .req-form input, .req-form textarea { font-size: 1.05rem; padding: 15px 16px; }
+        .req-form label { font-size: 0.95rem; }
+        @media (max-width: 560px) {
+            .sent-ok .ok-ic { width: 64px; height: 64px; font-size: 1.7rem; }
+            .req-form { font-size: 1rem; }
         }
         .sent-fallback { text-align: center; margin-top: 14px; font-size: 0.82rem; color: var(--text-soft); display: none; }
         .sent-fallback a { color: var(--gold); font-weight: 700; }
@@ -106,7 +123,9 @@
         <div class="req-form">
             <form class="form-card" id="reqForm">
                 <div class="sent-ok" id="sentOk">
-                    <i class="fas fa-circle-check"></i> Request sent! Admin will reply shortly.
+                    <div class="ok-ic"><i class="fas fa-circle-check"></i></div>
+                    <h3>Request Sent Successfully!</h3>
+                    <p>Admin ko tumhari request mil gayi hai. He will reply shortly.<br><small>Agar zaroorat ho, page refresh karke dobara bhej sakte ho.</small></p>
                 </div>
                 <div id="reqErr" class="err"></div>
 
