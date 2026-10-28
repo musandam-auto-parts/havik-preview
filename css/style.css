@@ -509,3 +509,37 @@ button, a, input, textarea, select { touch-action: manipulation; }
     animation: glowPulse 4s ease-in-out infinite;
     flex-shrink: 0;
 }
+
+/* ===== ENTRANCE ANIMATIONS (services & library) ===== */
+.services .svc-card, .library .res-grid .book { will-change: transform, opacity; }
+
+.section .grid, .svc-grid, .res-grid { position: relative; }
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(36px) scale(0.96); }
+    to   { opacity: 1; transform: none; }
+}
+@keyframes bookIn {
+    from { opacity: 0; transform: translateX(44px) rotateY(-14deg); }
+    to   { opacity: 1; transform: none; }
+}
+@keyframes spineGlow {
+    0%, 100% { box-shadow: inset 8px 0 14px -8px rgba(232,184,75,0.35); }
+    50%      { box-shadow: inset 8px 0 20px -6px rgba(232,184,75,0.75); }
+}
+
+.svc-grid.visible .svc-card { animation: cardIn 0.7s var(--ease) both; }
+.res-grid.visible .book { animation: bookIn 0.65s var(--ease) both; }
+.res-grid.visible .book .book-cover { animation: spineGlow 2.4s ease-in-out infinite; }
+
+.svc-grid.visible .svc-card:nth-child(1), .res-grid.visible .book:nth-child(1) { animation-delay: 0.05s; }
+.svc-grid.visible .svc-card:nth-child(2), .res-grid.visible .book:nth-child(2) { animation-delay: 0.18s; }
+.svc-grid.visible .svc-card:nth-child(3), .res-grid.visible .book:nth-child(3) { animation-delay: 0.31s; }
+.res-grid.visible .book:nth-child(4) { animation-delay: 0.44s; }
+.res-grid.visible .book:nth-child(5) { animation-delay: 0.57s; }
+.res-grid.visible .book:nth-child(6) { animation-delay: 0.70s; }
+.res-grid.visible .book:nth-child(7) { animation-delay: 0.83s; }
+.res-grid.visible .book:nth-child(8) { animation-delay: 0.96s; }
+
+/* books bas section pe aane par hi animate karein */
+[data-reveal] .svc-card, [data-reveal] .book { transition: none; }
