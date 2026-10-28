@@ -28,7 +28,7 @@
         </div>
 
         <div class="drawer-owner">
-            <div class="owner-avatar">SN</div>
+            <div class="owner-avatar"><img src="images/sandeep.jpg" alt="Sandeep Nayak"></div>
             <h3>Sandeep Nayak</h3>
             <p>Founder &amp; Curator</p>
         </div>
@@ -38,6 +38,7 @@
             <a href="#about" class="drawer-link" data-target="#about"><i class="fas fa-user"></i><span>About Sandeep</span></a>
             <a href="#library" class="drawer-link" data-target="#library"><i class="fas fa-folder-open"></i><span>Library</span></a>
             <a href="#wisdom" class="drawer-link" data-target="#wisdom"><i class="fas fa-feather"></i><span>Wisdom</span></a>
+            <a href="#services" class="drawer-link" data-target="#services"><i class="fas fa-screwdriver-wrench"></i><span>Services</span></a>
             <a href="#music" class="drawer-link" data-target="#music"><i class="fas fa-compass"></i><span>Explore</span></a>
             <a href="#contact" class="drawer-link" data-target="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
         </div>
@@ -97,7 +98,8 @@
             </div>
             <div class="about-wrap">
                 <div class="about-photo" data-reveal>
-                    <span class="initials">SN</span>
+                    <img src="images/sandeep.jpg" alt="Sandeep Nayak — Founder">
+                    
                     <div class="about-badge">
                         <i class="fas fa-circle-check"></i>
                         <div>
@@ -128,54 +130,81 @@
                 <h2>The Reading Room</h2>
                 <p>Six books that built kings, generals and self-made fortunes — every one of them classic and freely readable.</p>
             </div>
-            <div class="res-grid">
-                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/25434" target="_blank" rel="noopener">
-                    <div class="res-icon"><i class="fas fa-book"></i></div>
-                    <div class="res-info">
+            <div class="res-grid" id="bookGrid">
+
+                <a class="book featured" data-reveal href="books/i-am-that.pdf" target="_blank" rel="noopener">
+                    <div class="book-cover"><span class="ribbon">Rare Gem</span><i class="fas fa-om"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Spirituality</span>
+                        <h3>I Am That</h3>
+                        <p>Nisargadatta Maharaj · Dialogues on the Self</p>
+                        <span class="read-link"><i class="fas fa-book-open"></i> Read Now</span>
+                    </div>
+                </a>
+
+                <a class="book featured" data-reveal href="books/power-of-now.pdf" target="_blank" rel="noopener">
+                    <div class="book-cover"><span class="ribbon gold">Modern Classic</span><i class="fas fa-spa"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Presence</span>
+                        <h3>The Power of Now</h3>
+                        <p>Eckhart Tolle · Guide to Spiritual Enlightenment</p>
+                        <span class="read-link"><i class="fas fa-book-open"></i> Read Now</span>
+                    </div>
+                </a>
+
+                <a class="book" data-reveal href="https://www.gutenberg.org/ebooks/25434" target="_blank" rel="noopener">
+                    <div class="book-cover"><i class="fas fa-coins"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Wealth</span>
                         <h3>The Science of Getting Rich</h3>
-                        <p>Wallace Wattles · Wealth mindset</p>
+                        <p>Wallace Wattles</p>
+                        <span class="read-link"><i class="fas fa-arrow-right"></i> Open</span>
                     </div>
-                    <i class="fas fa-arrow-right res-go"></i>
                 </a>
-                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/4507" target="_blank" rel="noopener">
-                    <div class="res-icon"><i class="fas fa-brain"></i></div>
-                    <div class="res-info">
+                <a class="book" data-reveal href="https://www.gutenberg.org/ebooks/4507" target="_blank" rel="noopener">
+                    <div class="book-cover"><i class="fas fa-brain"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Mindset</span>
                         <h3>As a Man Thinketh</h3>
-                        <p>James Allen · Thought is destiny</p>
+                        <p>James Allen</p>
+                        <span class="read-link"><i class="fas fa-arrow-right"></i> Open</span>
                     </div>
-                    <i class="fas fa-arrow-right res-go"></i>
                 </a>
-                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/132" target="_blank" rel="noopener">
-                    <div class="res-icon"><i class="fas fa-chess-knight"></i></div>
-                    <div class="res-info">
+                <a class="book" data-reveal href="https://www.gutenberg.org/ebooks/132" target="_blank" rel="noopener">
+                    <div class="book-cover"><i class="fas fa-chess-knight"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Strategy</span>
                         <h3>The Art of War</h3>
-                        <p>Sun Tzu · Strategy classic</p>
+                        <p>Sun Tzu</p>
+                        <span class="read-link"><i class="fas fa-arrow-right"></i> Open</span>
                     </div>
-                    <i class="fas fa-arrow-right res-go"></i>
                 </a>
-                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/2680" target="_blank" rel="noopener">
-                    <div class="res-icon"><i class="fas fa-columns"></i></div>
-                    <div class="res-info">
+                <a class="book" data-reveal href="https://www.gutenberg.org/ebooks/2680" target="_blank" rel="noopener">
+                    <div class="book-cover"><i class="fas fa-columns"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Stoicism</span>
                         <h3>Meditations</h3>
-                        <p>Marcus Aurelius · Stoic royalty</p>
+                        <p>Marcus Aurelius</p>
+                        <span class="read-link"><i class="fas fa-arrow-right"></i> Open</span>
                     </div>
-                    <i class="fas fa-arrow-right res-go"></i>
                 </a>
-                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/148" target="_blank" rel="noopener">
-                    <div class="res-icon"><i class="fas fa-flag-usa"></i></div>
-                    <div class="res-info">
-                        <h3>The Autobiography of Benjamin Franklin</h3>
-                        <p>Self-made legacy</p>
+                <a class="book" data-reveal href="https://www.gutenberg.org/ebooks/148" target="_blank" rel="noopener">
+                    <div class="book-cover"><i class="fas fa-flag-usa"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Biography</span>
+                        <h3>Benjamin Franklin</h3>
+                        <p>Autobiography</p>
+                        <span class="read-link"><i class="fas fa-arrow-right"></i> Open</span>
                     </div>
-                    <i class="fas fa-arrow-right res-go"></i>
                 </a>
-                <a class="res-card" data-reveal href="https://www.gutenberg.org/ebooks/9351" target="_blank" rel="noopener">
-                    <div class="res-icon"><i class="fas fa-mountain-sun"></i></div>
-                    <div class="res-info">
+                <a class="book" data-reveal href="https://www.gutenberg.org/ebooks/9351" target="_blank" rel="noopener">
+                    <div class="book-cover"><i class="fas fa-mountain-sun"></i></div>
+                    <div class="book-meta">
+                        <span class="book-tag">Discipline</span>
                         <h3>Self-Help</h3>
-                        <p>Samuel Smiles · The original grinder's manual</p>
+                        <p>Samuel Smiles</p>
+                        <span class="read-link"><i class="fas fa-arrow-right"></i> Open</span>
                     </div>
-                    <i class="fas fa-arrow-right res-go"></i>
                 </a>
             </div>
         </div>
@@ -187,6 +216,28 @@
             <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
             <blockquote>A reader lives a thousand lives before he dies.<br><em>The man who never reads lives only one.</em></blockquote>
             <cite>- George R. R. Martin</cite>
+        </div>
+    </section>
+
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section section-alt" id="services">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <span class="kicker">Services</span>
+                <h2>Power Tools</h2>
+                <p>Hand-built utilities that actually work — no ads, no nonsense.</p>
+            </div>
+            <div class="svc-grid">
+                <a class="svc-card" data-reveal href="downloader.html" target="_blank" rel="noopener">
+                    <div class="svc-icon"><i class="fas fa-cloud-arrow-down"></i></div>
+                    <div class="svc-info">
+                        <h3>Ultimate Video Downloader</h3>
+                        <p>Download videos from 40+ platforms in one click.</p>
+                    </div>
+                    <span class="svc-go"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+            </div>
         </div>
     </section>
 

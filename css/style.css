@@ -387,3 +387,88 @@ button { font-family: inherit; cursor: pointer; }
     .drawer { width: 100vw; right: -105vw; }
     .brand p { display: none; }
 }
+
+/* ===== OWNER AVATAR PHOTO ===== */
+.owner-avatar {
+    width: 92px; height: 92px; margin: 0 auto 14px; border-radius: 50%;
+    padding: 3px; background: var(--grad-gold);
+    box-shadow: 0 14px 40px rgba(232,184,75,0.4);
+}
+.owner-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.about-photo img { width: 100%; min-height: 380px; max-height: 520px; object-fit: cover; }
+
+/* ===== LIBRARY — BOOK SHELF ===== */
+.res-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.book {
+    background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line-soft); border-radius: 16px;
+    padding: 20px; display: flex; gap: 16px; align-items: stretch;
+    transition: all 0.32s var(--ease); position: relative; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.book:hover { transform: translateY(-8px); border-color: var(--line); box-shadow: var(--shadow); }
+.book-cover {
+    width: 86px; flex-shrink: 0; border-radius: 10px;
+    background: linear-gradient(160deg, #241a10, #3d2c18 60%, #1c140c);
+    border: 1px solid var(--line); border-left: 4px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1.7rem; position: relative;
+    box-shadow: inset 8px 0 14px -8px rgba(232,184,75,0.35);
+    transition: box-shadow 0.3s;
+}
+.book:hover .book-cover { box-shadow: inset 8px 0 18px -6px rgba(232,184,75,0.6), 0 8px 24px rgba(232,184,75,0.2); }
+.book.featured .book-cover {
+    background: linear-gradient(160deg, #4a3512, #2c1f0a); border-left-color: var(--gold-2);
+    color: var(--gold);
+}
+.book-meta { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.book-tag {
+    font-size: 0.62rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); background: var(--gold-soft); border: 1px solid var(--line);
+    padding: 3px 10px; border-radius: 999px; width: fit-content;
+}
+.book-meta h3 { font-size: 1.05rem; font-weight: 700; color: #fff; line-height: 1.3; margin-top: 4px; }
+.book-meta p { color: var(--text-soft); font-size: 0.8rem; flex: 1; }
+.read-link {
+    font-size: 0.78rem; font-weight: 700; color: var(--gold);
+    display: flex; align-items: center; gap: 6px; margin-top: 6px;
+    transition: gap 0.25s;
+}
+.book:hover .read-link { gap: 10px; }
+.ribbon {
+    position: absolute; top: -9px; right: -30px;
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, #d0492f, #8a2020); color: #fff;
+    font-size: 0.6rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 24px 34px 4px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+.ribbon.gold { background: linear-gradient(135deg, #e8b84b, #a97c2f); color: #15100a; }
+.book.featured { border-color: var(--line); background: linear-gradient(160deg, rgba(232,184,75,0.07), rgba(255,255,255,0.03)); }
+
+/* ===== SERVICES ===== */
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 20px; }
+.svc-card {
+    background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line-soft); border-radius: 16px;
+    padding: 26px 24px; display: flex; align-items: center; gap: 18px;
+    transition: all 0.32s var(--ease); position: relative; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.svc-card::after {
+    content: ''; position: absolute; width: 160px; height: 160px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,184,75,0.16), transparent 70%);
+    top: -60px; right: -50px; opacity: 0; transition: opacity 0.4s;
+}
+.svc-card:hover { transform: translateY(-6px); border-color: var(--line); box-shadow: var(--shadow); }
+.svc-card:hover::after { opacity: 1; }
+.svc-icon {
+    width: 62px; height: 62px; border-radius: 16px; flex-shrink: 0;
+    background: var(--grad-gold-2); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    box-shadow: 0 10px 28px rgba(232,184,75,0.35);
+}
+.svc-info { flex: 1; min-width: 0; }
+.svc-info h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.svc-info p { color: var(--text-soft); font-size: 0.84rem; }
+.svc-go { color: var(--gold); font-size: 1.1rem; transition: transform 0.25s; }
+.svc-card:hover .svc-go { transform: translate(3px,-3px); }
