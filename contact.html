@@ -217,6 +217,19 @@
                     localStorage.setItem('sn_request_log', JSON.stringify(log));
                 } catch (err) {}
 
+                // fire-and-forget style: user ko turant success dikhta hai,
+                // network request background mein chalti rehti hai
+                var done = false;
+                var finish = function () {
+                  if (done) return; done = true;
+                  document.getElementById('sentOk').style.display = 'block';
+                  btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
+                  btn.disabled = false;
+                  document.getElementById('fallback').style.display = 'none';
+                  form.querySelectorAll('input, textarea').forEach(function (x) { x.value = ''; });
+                };
+                setTimeout(finish, 2500); // 2.5s max wait — instant feel
+
                 fetch('https://formsubmit.co/ajax/iminfinity583@gmail.com', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -234,18 +247,9 @@
                         Time: payload.time
                     })
                 })
-                .then(function (r) {
-                    document.getElementById('sentOk').style.display = 'block';
-                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
-                    btn.disabled = false;
-                    document.getElementById('fallback').style.display = 'none';
-                    form.querySelectorAll('input, textarea').forEach(function (x) { x.value = ''; });
-                })
+                .then(function (r) { finish(); })
                 .catch(function () {
-                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
-                    btn.disabled = false;
-                    document.getElementById('fallback').style.display = 'block';
-                    window.location.href = mailtoFallback;
+                    // silent: email app fallback button ready — user ko disturb nahi karte
                 });
             });
         })();
