@@ -496,3 +496,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .svc-chip i { font-size: 0.68rem; }
 .svc-info h3 { display: flex; align-items: center; }
+
+/* prevent double-tap zoom jitter */
+html { touch-action: manipulation; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+button, a, input, textarea, select { touch-action: manipulation; }
