@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0907">
     <title>Sign Up | Vineet</title>
     <meta name="description" content="Create your free Vineet account.">
     <link rel="stylesheet" href="css/style.css">
@@ -11,7 +12,14 @@
 </head>
 <body data-page="signup">
 
-    <aside class="sidebar" id="sidebar">
+<div id="preloader">
+        <div class="pre-logo">VINEET</div>
+        <div class="pre-bar"><i></i></div>
+    </div>
+
+    <div class="scroll-progress"></div>
+
+        <aside class="sidebar" id="sidebar">
         <div class="side-brand">VINEET</div>
         <a href="index.html" class="side-link" title="Home"><i class="fas fa-house"></i><span>Home</span></a>
         <a href="dashboard.html" class="side-link" title="Dashboard"><i class="fas fa-table-columns"></i><span>Dashboard</span></a>
@@ -48,38 +56,34 @@
                         <h2>Create Account</h2>
                     </div>
 
-                    <form id="signupForm" style="background:#fffdfa;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow);">
-                        <div id="errBox" style="display:none;background:rgba(187,51,51,.1);color:#8a2222;border:1px solid #d99;border-radius:12px;padding:12px 16px;margin-bottom:18px;font-size:.9rem;"></div>
+                    <form id="signupForm" class="form-card">
+                        <div id="errBox" class="err"></div>
 
-                        <div style="margin-bottom:16px;">
-                            <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:8px;">Full Name</label>
-                            <input name="name" id="name" placeholder="Your name" required
-                                style="width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-family:inherit;font-size:1rem;">
+                        <div class="field">
+                            <label>Full Name</label>
+                            <input name="name" id="name" placeholder="Your name" required>
                         </div>
 
-                        <div style="margin-bottom:16px;">
-                            <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:8px;">Username (login id)</label>
-                            <input name="username" id="username" placeholder="Choose a username" required
-                                style="width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-family:inherit;font-size:1rem;">
+                        <div class="field">
+                            <label>Username (login id)</label>
+                            <input name="username" id="username" placeholder="Choose a username" required>
                         </div>
 
-                        <div style="margin-bottom:16px;">
-                            <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:8px;">Password</label>
-                            <input name="password" id="password" type="password" placeholder="Create password" required minlength="5"
-                                style="width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-family:inherit;font-size:1rem;">
+                        <div class="field">
+                            <label>Password</label>
+                            <input name="password" id="password" type="password" placeholder="Create password" required minlength="5">
                         </div>
 
-                        <div style="margin-bottom:24px;">
-                            <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:8px;">Telegram ID <span style="font-weight:400;color:var(--text-soft);">(optional — instant access after payment)</span></label>
-                            <input name="tg" id="tg" placeholder="Your Telegram numeric ID"
-                                style="width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-family:inherit;font-size:1rem;">
-                            <p style="font-size:.78rem;color:var(--text-soft);margin-top:6px;">Tip: Telegram me @userinfobot ko message karo, wo tumhara ID batayega.</p>
+                        <div class="field">
+                            <label>Telegram ID <span style="font-weight:400;color:var(--text-soft);">(optional — instant access after payment)</span></label>
+                            <input name="tg" id="tg" placeholder="Your Telegram numeric ID">
+                            <p class="hint">Tip: Telegram me @userinfobot ko message karo, wo tumhara ID batayega.</p>
                         </div>
 
                         <button type="submit" class="btn btn-solid" style="width:100%;justify-content:center;" id="signupBtn"><i class="fas fa-user-plus"></i> Create Account</button>
 
                         <p style="text-align:center;margin-top:18px;font-size:.9rem;color:var(--text-soft);">
-                            Already have an account? <a href="login.html" style="color:var(--brown-2);font-weight:700;">Login</a>
+                            Already have an account? <a href="login.html" style="color:var(--gold);font-weight:700;">Login</a>
                         </p>
                         <p style="text-align:center;margin-top:6px;font-size:.85rem;color:var(--text-soft);">
                             <a href="index.html" style="color:var(--text-soft);text-decoration:underline;">Back to Home</a>
