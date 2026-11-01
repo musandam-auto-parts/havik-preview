@@ -1,0 +1,101 @@
+{
+  "updated": "2026-11-01",
+  "books": [
+    {
+      "id": "i-am-that",
+      "title": "I Am That",
+      "author": "Nisargadatta Maharaj",
+      "tag": "Spirituality",
+      "note": "Dialogues on the nature of the Self.",
+      "format": "PDF · Hosted",
+      "year": "1973",
+      "icon": "fa-om",
+      "url": "books/i-am-that.pdf",
+      "hosted": true
+    },
+    {
+      "id": "power-of-now",
+      "title": "The Power of Now",
+      "author": "Eckhart Tolle",
+      "tag": "Presence",
+      "note": "Living beyond the thinking mind.",
+      "format": "PDF · Hosted",
+      "year": "1997",
+      "icon": "fa-spa",
+      "url": "books/power-of-now.pdf",
+      "hosted": true
+    },
+    {
+      "id": "science-getting-rich",
+      "title": "The Science of Getting Rich",
+      "author": "Wallace Wattles",
+      "tag": "Wealth",
+      "note": "The exact thinking behind money building.",
+      "format": "Public domain",
+      "year": "1910",
+      "icon": "fa-coins",
+      "url": "https://www.gutenberg.org/ebooks/25434",
+      "hosted": false
+    },
+    {
+      "id": "as-a-man-thinketh",
+      "title": "As a Man Thinketh",
+      "author": "James Allen",
+      "tag": "Mindset",
+      "note": "Thought shapes character and life.",
+      "format": "Public domain",
+      "year": "1903",
+      "icon": "fa-brain",
+      "url": "https://www.gutenberg.org/ebooks/4507",
+      "hosted": false
+    },
+    {
+      "id": "art-of-war",
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "tag": "Strategy",
+      "note": "Position, timing and advantage.",
+      "format": "Public domain",
+      "year": "5th c. BC",
+      "icon": "fa-chess-knight",
+      "url": "https://www.gutenberg.org/ebooks/132",
+      "hosted": false
+    },
+    {
+      "id": "meditations",
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "tag": "Stoicism",
+      "note": "A ruler's private discipline notes.",
+      "format": "Public domain",
+      "year": "c. 161 AD",
+      "icon": "fa-columns",
+      "url": "https://www.gutenberg.org/ebooks/2680",
+      "hosted": false
+    },
+    {
+      "id": "benjamin-franklin",
+      "title": "Benjamin Franklin",
+      "author": "Autobiography",
+      "tag": "Biography",
+      "note": "Self-education and the founder's method.",
+      "format": "Public domain",
+      "year": "1791",
+      "icon": "fa-flag-usa",
+      "url": "https://www.gutenberg.org/ebooks/148",
+      "hosted": false
+    },
+    {
+      "id": "self-help",
+      "title": "Self-Help",
+      "author": "Samuel Smiles",
+      "tag": "Discipline",
+      "note": "The original work-ethic handbook.",
+      "format": "Public domain",
+      "year": "1859",
+      "icon": "fa-mountain-sun",
+      "url": "https://www.gutenberg.org/ebooks/9351",
+      "hosted": false
+    }
+  ]
+}

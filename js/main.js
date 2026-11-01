@@ -85,6 +85,7 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+  window.refreshReveals = function () { document.querySelectorAll('[data-reveal]:not(.visible)').forEach(function (el) { io.observe(el); }); };
 
   // ===== Hero particles canvas =====
   var canvas = document.getElementById('heroCanvas');
