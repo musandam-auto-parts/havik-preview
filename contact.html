@@ -82,8 +82,6 @@
             .sent-ok .ok-ic { width: 64px; height: 64px; font-size: 1.7rem; }
             .req-form { font-size: 1rem; }
         }
-        .sent-fallback { text-align: center; margin-top: 14px; font-size: 0.82rem; color: var(--text-soft); display: none; }
-        .sent-fallback a { color: var(--gold); font-weight: 700; }
     </style>
 </head>
 <body>
@@ -92,7 +90,6 @@
 
     <header class="topbar">
         <div class="brand">
-            <img class="top-avatar" src="images/sandeep.jpg" alt="Sandeep Nayak">
             <div>
                 <h1 style="font-size:1.3rem;">SANDEEP NAYAK</h1>
                 <p>Curator of Knowledge</p>
@@ -116,7 +113,7 @@
             <p class="role">Admin — Requests &amp; Support</p>
             <div class="admin-mail">
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:iminfinity583@gmail.com">iminfinity583@gmail.com</a>
+                <span class="admin-contact-note">Requests are routed to the admin desk.</span>
             </div>
         </div>
 
@@ -157,9 +154,6 @@
                     <i class="fas fa-paper-plane"></i> Send Request
                 </button>
 
-                <p class="sent-fallback" id="fallback">
-                    Network blocked? <a id="mailFallback" href="#">Send the same request via email app</a>
-                </p>
 
                 <div class="ip-note">
                     <i class="fas fa-shield-halved"></i>
@@ -196,19 +190,6 @@
                 return d.toLocaleString('en-IN') + ' · ' + Intl.DateTimeFormat().resolvedOptions().timeZone;
             }
 
-            function toMailtoBody(d) {
-                return encodeURIComponent(
-                    'Book Request\n' + Array(40).join('-') +
-                    '\nName    : ' + d.name +
-                    '\nPhone   : ' + d.phone +
-                    '\nEmail   : ' + (d.email || '-') +
-                    '\nBook    : ' + d.book +
-                    '\nDetails : ' + (d.message || '-') +
-                    '\nIPv4    : ' + d.ip +
-                    '\nDevice  : ' + d.device +
-                    '\nTime    : ' + stamp()
-                );
-            }
 
             var form = document.getElementById('reqForm');
             var btn = document.getElementById('sendBtn');
@@ -226,10 +207,6 @@
                 payload.name = f.get('name'); payload.phone = f.get('phone');
                 payload.email = f.get('email'); payload.book = f.get('book'); payload.message = f.get('message');
 
-                var mailtoFallback = 'mailto:iminfinity583@gmail.com?subject=' +
-                    encodeURIComponent('Book Request — ' + payload.name) + '&body=' + toMailtoBody(payload);
-                document.getElementById('mailFallback').href = mailtoFallback;
-
                 // save local archive (also visible in admin panel on same device)
                 try {
                     var log = JSON.parse(localStorage.getItem('sn_request_log') || '[]');
@@ -245,7 +222,6 @@
                   document.getElementById('sentOk').style.display = 'block';
                   btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
                   btn.disabled = false;
-                  document.getElementById('fallback').style.display = 'none';
                   form.querySelectorAll('input, textarea').forEach(function (x) { x.value = ''; });
                 };
                 setTimeout(finish, 2500); // 2.5s max wait — instant feel
@@ -269,7 +245,6 @@
                 })
                 .then(function (r) { finish(); })
                 .catch(function () {
-                    // silent: email app fallback button ready — user ko disturb nahi karte
                 });
             });
         })();
