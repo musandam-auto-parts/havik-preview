@@ -7,7 +7,7 @@
       "author": "Nisargadatta Maharaj",
       "tag": "Spirituality",
       "note": "Dialogues on the nature of the Self.",
-      "format": "PDF · Hosted",
+      "format": "PDF \u00b7 Hosted",
       "year": "1973",
       "icon": "fa-om",
       "url": "books/i-am-that.pdf",
@@ -19,7 +19,7 @@
       "author": "Eckhart Tolle",
       "tag": "Presence",
       "note": "Living beyond the thinking mind.",
-      "format": "PDF · Hosted",
+      "format": "PDF \u00b7 Hosted",
       "year": "1997",
       "icon": "fa-spa",
       "url": "books/power-of-now.pdf",
@@ -96,6 +96,18 @@
       "icon": "fa-mountain-sun",
       "url": "https://www.gutenberg.org/ebooks/9351",
       "hosted": false
+    },
+    {
+      "id": "_admintest",
+      "title": "_Admin Test",
+      "author": "Test",
+      "tag": "Test",
+      "note": "",
+      "format": "PDF \u00b7 Hosted",
+      "year": "",
+      "icon": "fa-book-open",
+      "url": "books/_admintest.pdf",
+      "hosted": true
     }
   ]
 }
