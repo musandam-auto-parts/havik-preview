@@ -359,6 +359,7 @@
             var token = localStorage.getItem(TOKEN_KEY) || '';
             var books = [];
             var booksSha = '';
+            var booksLoaded = false;
             var editingId = null;
 
             function toast(msg, isErr) {
@@ -542,9 +543,11 @@
                     var parsed = {};
                     try { parsed = JSON.parse(f.text); } catch (e) {}
                     books = parsed.books || [];
+                    booksLoaded = true;
                     renderBooks();
                 }).catch(function (e) {
                     $('libWrap').innerHTML = '<div class="empty"><i class="fas fa-triangle-exclamation"></i>Could not load data/books.json — ' + esc(e.message) + '</div>';
+                    toast('Catalogue load failed: ' + e.message, true);
                 });
             }
 
@@ -623,11 +626,41 @@
                 });
             }
 
+            function ensureBooks() {
+                if (booksLoaded && booksSha) return Promise.resolve();
+                return getFile('data/books.json').then(function (f) {
+                    booksSha = f.data.sha;
+                    try { books = (JSON.parse(f.text).books) || []; } catch (e) {}
+                    booksLoaded = true;
+                    renderBooks();
+                });
+            }
+
             function saveBooks(message) {
                 var payload = JSON.stringify({ updated: new Date().toISOString().slice(0, 10), books: books }, null, 2) + '\n';
-                return putFile('data/books.json', payload, message, false, booksSha).then(function (res) {
-                    booksSha = res.content.sha;
+                var attempt = function () {
+                    return putFile('data/books.json', payload, message, false, booksSha).then(function (res) {
+                        booksSha = res.content.sha;
+                    });
+                };
+                return ensureBooks().then(attempt).catch(function (err) {
+                    if (err.status === 409 || err.status === 422) {
+                        return getFile('data/books.json').then(function (f) {
+                            booksSha = f.data.sha;
+                            return attempt();
+                        });
+                    }
+                    throw err;
                 });
+            }
+
+            function fail(err) {
+                var msg = err && err.message ? err.message : 'Unknown error';
+                if (err && err.status === 401) msg = 'Token invalid or expired — update it in Settings.';
+                if (err && err.status === 403) msg = 'Token has no write access — needs Contents: Read and write.';
+                if (err && err.status === 409) msg = 'Library changed elsewhere — reload and try again.';
+                toast(msg, true);
+                if (err && (err.status === 401 || err.status === 403)) showView('settings');
             }
 
             function progress(pct) {
@@ -690,9 +723,7 @@
                         resetForm();
                         loadBooks();
                         showView('library');
-                    }).catch(function (err) {
-                        toast(err.message, true);
-                    }).finally(function () { btn.disabled = false; });
+                    }).catch(fail).finally(function () { btn.disabled = false; });
                     return;
                 }
 
@@ -726,6 +757,9 @@
                 }
 
                 work.then(function () {
+                    progress(70);
+                    return ensureBooks();
+                }).then(function () {
                     progress(80);
                     books.push(newBook);
                     return saveBooks('admin: publish "' + title + '"');
@@ -735,9 +769,7 @@
                     resetForm();
                     loadBooks();
                     showView('library');
-                }).catch(function (err) {
-                    toast(err.message, true);
-                }).finally(function () { btn.disabled = false; });
+                }).catch(fail).finally(function () { btn.disabled = false; });
             });
 
             function removeBook(id) {
@@ -752,7 +784,7 @@
                 }
                 chain.then(function () { return saveBooks('admin: delete "' + b.title + '"'); })
                     .then(function () { toast('Book deleted.'); loadBooks(); })
-                    .catch(function (err) { toast(err.message, true); loadBooks(); });
+                    .catch(function (err) { fail(err); loadBooks(); });
             }
 
             /* ---------- REQUESTS ---------- */
